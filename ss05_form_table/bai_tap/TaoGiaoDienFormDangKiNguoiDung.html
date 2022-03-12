@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Đăng Kí Người Dùng</title>
+</head>
+<body>
+    <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="txtUser">Họ và tên: </label> <br/>
+                    <input type="text" name="name" id="txtUser"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtEmail">Email: </label> <br/>
+                    <input type="text" name="email" id="txtEmail"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtPhone">Số điện thoại: </label> <br/>
+                    <input type="number" name="phone" id="txtPhone"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Giới tính: </span> <br>
+                    <input type="radio" name="gender"/> Nam
+                    <input type="radio" name="gender"/> Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Đăng Kí">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

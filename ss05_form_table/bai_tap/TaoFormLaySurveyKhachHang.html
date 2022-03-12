@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Khách Hàng</title>
+    <style>
+        .bang {
+            border-collapse: collapse;
+        }
+        .mau {
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<h2>Maket Research Survey</h2>
+<span>Please take a few moments to complete this satisfaction survey.</span>
+<hr>
+<form>
+    <table>
+        <tr>
+            <td>
+                <span><strong>What is your age range?</strong></span><br>
+                <select>
+                    <option> 18-24</option>
+                    <option> 25-34</option>
+                    <option> 35-50</option>
+                    <option> 50+</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span><strong>What is your yearly income range?</strong></span> <br/>
+                <select>
+                    <option> $0 - $25,000</option>
+                    <option> $25,001 - $50,000</option>
+                    <option> $50,001 - $100,000</option>
+                    <option> $100,000+</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span><strong>Gender Identity</strong></span> <br/>
+                <input type="radio" name="gender"/> Male <br/>
+                <input type="radio" name="gender"/> Female <br/>
+                <input type="radio" name="gender"/> Nonbinary <br/>
+                <input type="radio" name="gender"/> Other
+                <input type="text" name="gender"/> <br/> Maximum of 250 characters. Currently Used: 0 characters.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span><strong>Which of the following products have your purchased in the last 2 months. Please check all that apply.</strong></span>
+                <br/>
+                <input type="checkbox" name="product"/> Product 1 <br/>
+                <input type="checkbox" name="product"/> Product 2 <br/>
+                <input type="checkbox" name="product"/> Product 3 <br/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span><strong>How often would you use our new product?</strong> </span><br/>
+                <input type="radio" name="product"/> Daily <br/>
+                <input type="radio" name="product"/> Weekly <br/>
+                <input type="radio" name="product"/> Monthly <br/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>What would you pay for the new product?</strong>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                $
+            </td>
+            <td rowspan="2">
+                <input type="text" name="product"/> <br> Dollars
+            </td>
+            <td>
+                .
+            </td>
+            <td rowspan="2">
+                <input type="text" name="product"/> <br> Cents
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <span><strong>What features would you like to see in the new product.</strong> </span> <br/>
+                <textarea rows="10" cols="100"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Please rate your level of agreement with the following statements.</strong> <br/>
+            </td>
+        </tr>
+    </table>
+    <table border="1" class="bang" cellpadding="1" >
+        <tr class="mau" >
+            <th></th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        </tr>
+        <tr>
+            <td><strong>Our products are priced fairly.</strong></td>
+            <td align="center"><input type="radio"/> <br> 1 </td>
+            <td align="center"><input type="radio"/> <br> 2 </td>
+            <td align="center"><input type="radio"/> <br> 3 </td>
+            <td align="center"><input type="radio"/> <br> 4 </td>
+        </tr>
+        <tr class="mau">
+            <td><strong>Our products are high quality.</strong></td>
+            <td align="center"><input type="radio"/> <br> 1 </td>
+            <td align="center"><input type="radio"/> <br> 2 </td>
+            <td align="center"><input type="radio"/> <br> 3 </td>
+            <td align="center"><input type="radio"/> <br> 4 </td>
+        </tr>
+        <tr>
+            <td><strong>You would recommend our product to a friend or coworker.</strong></td>
+            <td align="center"><input type="radio"/> <br> 1 </td>
+            <td align="center"><input type="radio"/> <br> 2 </td>
+            <td align="center"><input type="radio"/> <br> 3 </td>
+            <td align="center"><input type="radio"/> <br> 4 </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><input type="submit" name="sumbit" value="Sumbit"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
