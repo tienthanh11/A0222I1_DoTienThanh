@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        color {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<table width="700" height="10">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr align="center">
+        <td>
+            <input id="sl" type="text"/>
+        </td>
+        <td>
+            <select style="width: 100px">
+                <option>Việt Nam</option>
+            </select>
+        </td>
+        <td>
+            <select style="width: 100px">
+                <option>USD</option>
+            </select>
+        </td>
+        <td>
+            <input type="submit" value="Convert" style="background-color: blueviolet; color: white" onclick="convert()"/>
+        </td>
+    <tr>
+    <td>
+        <span id="result" style="color: blue"></span>
+    </td>
+    </tr>
+    </tr>
+</table>
+<script>
+    function convert() {
+        let tien = document.getElementById("sl").value;
+        let sotien = parseInt(tien);
+        let sotienvn = ("Result : " + sotien / 23000 + " VNĐ");
+        document.getElementById("result").innerHTML = sotienvn;
+    }
+</script>
+</body>
+</html>

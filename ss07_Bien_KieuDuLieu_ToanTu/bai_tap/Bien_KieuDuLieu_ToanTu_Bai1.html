@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        let inLy;
+        let inHoa;
+        let inSinh;
+        inLy = prompt("Nhập điểm môn Vật Lý: ");
+        inHoa = prompt("Nhập điểm môn Hoá học: ");
+        inSinh = prompt("Nhập điểm môn Sinh học: ");
+        let Ly = parseInt(inLy);
+        let Hoa = parseInt(inHoa);
+        let Sinh = parseInt(inSinh);
+        let diemTrungBinh = (Ly + Hoa + Sinh) / 3;
+        let sum = Ly + Hoa + Sinh;
+        document.write("Điểm trung bình là : "+ diemTrungBinh);
+        document.write('<br/>');
+        document.write("Tổng điểm là : " + sum);
+    </script>
+</body>
+</html>

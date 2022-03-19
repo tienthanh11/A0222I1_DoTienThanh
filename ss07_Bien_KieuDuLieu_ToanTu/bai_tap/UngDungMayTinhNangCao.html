@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu Cầu Mở Rộng</title>
+    <style></style>
+</head>
+<body>
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="4"><input type="text" style="text-align: right" size="30" id="display" /></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator('(')" type="submit" value="(" style="width: 50px"/></td>
+            <td><input onclick="calculator(')')" type="submit" value=")" style="width: 50px"/></td>
+            <td><input onclick="calculator('%')" type="submit" value="%" style="width: 50px"/></td>
+            <td><input onclick="clearInput('AC')" type="submit" value="AC" style="width: 50px"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator(7)" type="submit" value="7" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator(8)" type="submit" value="8" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator(9)" type="submit" value="9" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator('/')" type="submit" value="÷" style="width: 50px"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator(4)" type="submit" value="4" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator(5)" type="submit" value="5" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator(6)" type="submit" value="6" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator('*')" type="submit" value="×" style="width: 50px"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator(1)" type="submit" value="1" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator(2)" type="submit" value="2" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator(3)" type="submit" value="3" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator('-')" type="submit" value="-" style="width: 50px"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator(0)" type="submit" value="0" style="width: 50px; background-color: white"/></td>
+            <td><input onclick="calculator('.')" type="submit" value="." style="width: 50px; background-color: white"/></td>
+            <td><input onclick="tinhKetQua()" type="submit" value="=" style="width: 50px; background-color: dodgerblue; color: white"/></td>
+            <td><input onclick="calculator('+')" type="submit" value="+" style="width: 50px"/></td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        let str = " ";
+        function calculator(num) {
+            str += num; // str = str + num;
+            document.getElementById("display").value = str;
+        }
+        function tinhKetQua() {
+            let result = eval(str);
+            document.getElementById("display").value = str;
+            str = result + " ";
+        }
+        function clearInput() {
+            str = " ";
+            document.getElementById("display").value = str;
+        }
+    </script>
+</body>
+</html>

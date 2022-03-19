@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính Đơn Giản</title>
+</head>
+<body>
+    <h2>Caculator</h2>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="sl1"/>
+                <input type="text" id="sl2"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input onclick="tinh('add')" type="submit" value="Addition(+)"/>
+                <input onclick="tinh('sub')" type="submit" value="Subtraction(-)"/>
+                <input onclick="tinh('mul')" type="submit" value="Multiplication(X)">
+                <input onclick="tinh('div')" type="submit" value="Division(/)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="ketqua"></span>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function tinh(str) {
+            let nhapso1 = document.getElementById("sl1").value;
+            let nhapso2 = document.getElementById("sl2").value;
+            let so1 = parseInt(nhapso1);
+            let so2 = parseInt(nhapso2);
+            if(str == "add") {
+                result = so1 + so2;
+                document.getElementById("ketqua").innerHTML = ("Result Division : " + result);
+            }
+            else if(str == "sub") {
+                result = so1 - so2;
+                document.getElementById("ketqua").innerHTML = ("Result Division : " + result);
+            }
+            else if(str == "mul") {
+                result = so1 * so2;
+                document.getElementById("ketqua").innerHTML = ("Result Division : " + result);
+            }
+            else {
+                result = so1 / so2;
+                document.getElementById("ketqua").innerHTML = ("Result Division : " + result);
+            }
+        }
+    </script>
+
+</body>
+</html>
