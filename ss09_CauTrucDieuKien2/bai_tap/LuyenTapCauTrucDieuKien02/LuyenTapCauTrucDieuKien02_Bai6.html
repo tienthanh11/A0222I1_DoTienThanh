@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+    <script>
+        let b = parseFloat(prompt("Nhập b: "));
+        let c = parseFloat(prompt("Nhập c: "));
+        if(b == 0) {
+            if(c == 0) {
+                alert("Phương trình vô số nghiệm");
+            } else {
+                alert("Phương trình vô nghiệm");
+            }
+        } else {
+            let x = -c / b;
+            alert("Phương trình có nghiệm là: \nx = " + x);
+        }
+    </script>
+</body>
+</html>

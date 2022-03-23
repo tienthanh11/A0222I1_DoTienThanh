@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+    <script>
+        let doanhSo = parseInt(prompt("Nhập giá trị tổng doanh số bán hàng: "));
+        if(doanhSo <= 100) {
+            let hoaHong = doanhSo * 5 / 100;
+            alert("Với tổng doanh số là " + doanhSo + " , thì hoa hồng nhận được là " + hoaHong);
+        } else if(doanhSo <= 300) {
+            let hoaHong = doanhSo * 10 /100;
+            alert("Với tổng doanh số là " + doanhSo + " , thì hoa hồng nhận được là " + hoaHong);
+        } else if(doanhSo > 300) {
+            let hoaHong = doanhSo * 20 / 100;
+            alert("Với tổng doanh số là " + doanhSo + " , thì hoa hồng nhận được là " + hoaHong);
+        }
+    </script>
+</body>
+</html>

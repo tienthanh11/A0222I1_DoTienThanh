@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let x = parseFloat(prompt("Nhập điểm bài kiểm tra:"));
+    let y = parseFloat(prompt("Nhập điểm thi giữa kỳ"));
+    let z = parseFloat(prompt("Nhập điểm thi cuối kỳ"));
+    let tb = (x + y + z) / 3;
+    if (tb >= 9.0) {
+        alert("Giỏi");
+    } else if (tb >= 7.0) {
+        alert("Khá");
+    } else if (tb >= 5.0) {
+        alert("Trung Bình");
+    } else if (tb < 5.0) {
+        alert("Yếu");
+    } else {
+        alert("Không hợp lệ");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+    <script>
+        let tienBanDau = parseFloat(prompt("Nhập số tiền ban đầu: "));
+        let thangVay = parseFloat(prompt("Nhập số tháng cho vay: "));
+        let laiXuat = parseFloat(prompt("Nhập lãi xuất hàng tháng: "));
+        let ghepLai = parseFloat(prompt("Nhập số lần ghép lãi: "));
+        let lai = tienBanDau * Math.pow(1 + (laiXuat / ghepLai), (thangVay * ghepLai));
+        document.write("Lãi ngân hàng là : " + lai + " tỉ đồng");
+    </script>
+</body>
+</html>

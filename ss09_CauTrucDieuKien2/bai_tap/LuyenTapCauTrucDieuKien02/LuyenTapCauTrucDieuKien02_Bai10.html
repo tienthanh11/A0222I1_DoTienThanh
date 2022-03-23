@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+    <script>
+        let soDien = parseInt(prompt("Nhâp số điện (kWh) : "));
+        const BAC1 = 1678;
+        const BAC2 = 1734;
+        const BAC3 = 2014;
+        const BAC4 = 2536;
+        const BAC5 = 2834;
+        const BAC6 = 2927;
+        if(soDien < 0) {
+            alert("Mời nhập lại số điện không đươc nhỏ hơn 0");
+        } else if(soDien <= 50) {
+            let tienDien = soDien*BAC1;
+            alert("Dùng điện trong khoảng 0 - 50 kWh số tiền phải trả là : " + tienDien);
+        } else if(soDien <= 100) {
+            let tienDien = 50*BAC1 + ((soDien-50)*BAC2);
+            alert("Dùng điện trong khoảng 51 - 100 kWh số tiền phải trả là : " + tienDien);
+        } else if(soDien <= 200) {
+            let tienDien = 50*BAC1 + (50*BAC2) + ((soDien-100)*BAC3);
+            alert("Dùng điện trong khoảng 101 - 200 kWh số tiền phải trả là : " + tienDien);
+        } else if(soDien <= 300) {
+            let tienDien = 50*BAC1 + (50*BAC2) + (100*BAC3) + ((soDien-200)*BAC4);
+            alert("Dùng điện trong khoảng 201 - 300 kWh số tiền phải trả là : " + tienDien);
+        } else if(soDien <= 400) {
+            let tienDien = 50*BAC1 + (50*BAC2) + (100*BAC3) + (100*BAC4) + ((soDien-300)*BAC5);
+            alert("Dùng điện trong khoảng 301 - 400 kWh số tiền phải trả là : " + tienDien);
+        } else if(soDien > 400) {
+            let tienDien = 50*BAC1 + (50*BAC2) + (100*BAC3) + (100*BAC4) + (100*BAC5) + ((soDien-400)*BAC6);
+            alert("Dùng điện trên 400 kWh số tiền phải trả là : " + tienDien);
+        }
+    </script>
+</body>
+</html>
