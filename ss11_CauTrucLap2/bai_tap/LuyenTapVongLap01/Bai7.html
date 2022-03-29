@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 7</title>
 </head>
 <body>
-$END$
+    <script>
+        for(let i = 1; i <= 100; i++) {
+            if(i % 3 === 0 && i % 5 === 0) {
+                document.write(i + " : FizzBuzz" + "<br>");
+            } else {
+                if(i % 3 === 0) {
+                    document.write(i + " : Fizz" + "<br>");
+                } else if(i % 5 === 0) {
+                    document.write(i + " : Buzz" + "<br>");
+                }
+            }
+        }
+    </script>
+
+<script></script>
 </body>
 </html>

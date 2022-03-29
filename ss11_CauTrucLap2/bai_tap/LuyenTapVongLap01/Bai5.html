@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 5</title>
 </head>
 <body>
-$END$
+    <script>
+        let f = 0, f0 = 0, f1 = 0;
+        let tong = 0;
+        let fibonacci = " ";
+        for(let i = 0; i < 20; i++) {
+            if(i === 0) {
+                f = 1;
+                f1 = 1;
+                fibonacci += f + " ";
+                tong += f;
+            } else {
+                f = f0 + f1;
+                f0 = f1;
+                f1 = f;
+                fibonacci += f + " ";
+                tong += f;
+                console.log(i + " = " + f);
+            }
+        }
+        document.write("Dãy fibonacci đầu tiên là: " + fibonacci + "<br>");
+        document.write("Tổng của các số trong dãy fibonacci là: " + tong);
+    </script>
 </body>
 </html>

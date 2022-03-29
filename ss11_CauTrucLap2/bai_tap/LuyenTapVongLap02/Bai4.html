@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 4</title>
 </head>
 <body>
-$END$
+    <script>
+        let m = parseInt(prompt("Nhập m > 0 : "));
+        let n = parseInt(prompt("Nhập n > 0 : "));
+        for (let i = 1; i <= m; i++) {
+            for (let j = 1; j <= n; j++) {
+                if (i === 1 || j === 1 || i === m || j === n) {
+                document.write("<strong style='color: red'> * </strong>");
+                } else {
+                    document.write("&nbsp&nbsp" + " ");
+                }
+            }
+            document.write("<br>");
+        }
+    </script>
 </body>
 </html>

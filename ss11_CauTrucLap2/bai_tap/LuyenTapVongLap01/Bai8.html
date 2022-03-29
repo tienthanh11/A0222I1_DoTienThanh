@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 8</title>
 </head>
 <body>
-$END$
+    <script>
+        let canDuoi = parseInt(prompt("Nhập cân dưới: "));
+        let canTren = parseInt(prompt("Nhập cân trên: "));
+        let random = Math.floor(Math.random() * (canTren - canDuoi + 1) + canDuoi);
+        let dem = 0;
+        do {
+            let a = parseInt(prompt("Nhập số mà bạn đoán: "));
+            if(random === a) {
+                alert("Chúc mừng bạn!");
+                break;
+            } else if(random > a) {
+                alert("số nhập phải nhỏ hơn");
+                dem++;
+            } else {
+                alert("số nhập phải lớn hơn");
+                dem++;
+            }
+            if(dem > 3) {
+                alert("Bạn đã hết lượt chơi");
+                break;
+            }
+        } while (true);
+    </script>
 </body>
 </html>

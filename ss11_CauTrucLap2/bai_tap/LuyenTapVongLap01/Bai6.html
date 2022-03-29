@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 6</title>
 </head>
 <body>
-$END$
+    <script>
+        let count = 0, tong = 0;
+        let dayso = " ";
+        let i = 1;
+        while (i < 30) {
+            if(i % 7 === 0) {
+                dayso += i + " ";
+                console.log(dayso);
+                tong += i;
+                count++;
+            }
+            i++;
+        }
+        document.write("Dãy số tự nhiên là: " + dayso + "<br>");
+        document.write("Tổng các số tự nhiên là: " + tong);
+    </script>
 </body>
 </html>

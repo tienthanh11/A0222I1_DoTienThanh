@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 5</title>
 </head>
 <body>
-$END$
+    <script>
+        let soTien = parseInt(prompt("Nhập số tiền gửi ngân hàng: "));
+        let soThang = parseInt(prompt("Nhập số tháng đã gửi là: "));
+        let tienLai = 0;
+        let tongTienLai = tienLai;
+        document.write("Số tiền đã gửi là " + soTien + "VNĐ trong " + soThang + " tháng với lãi suất 6%/năm" + "<br>");
+        for(let i = 0; i < soThang; i++) {
+            tienLai = ((soTien * 6)/100) / 12;
+            tongTienLai += tienLai;
+            soTien += tienLai;
+            document.write("Tiền lãi của tháng " + (i + 1) + " là " + tienLai + " VNĐ <br>");
+        }
+        document.write("Tổng tiền lãi trong " + soThang + " là " + tongTienLai + "VNĐ <br>");
+    </script>
 </body>
 </html>

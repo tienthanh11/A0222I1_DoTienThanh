@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 2</title>
 </head>
 <body>
-$END$
+    <script>
+        let so = parseInt(prompt("Nhập giá trị giai thừa là: "));
+        let giaiThua = 1;
+        if(so < 0) {
+            alert("Lỗi giai thừa");
+        } else if(so === 0 || so === 1) {
+            giaiThua = 1;
+        } else {
+            for(let i = 1; i <= so; i++) {
+                giaiThua *= i;
+            }
+        }
+        document.write(so + "! = " + giaiThua);
+    </script>
 </body>
 </html>

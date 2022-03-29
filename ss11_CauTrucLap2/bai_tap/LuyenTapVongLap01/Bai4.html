@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 4</title>
 </head>
 <body>
-$END$
+    <script>
+        let f = 0, f0 = 0, f1 = 0;
+        let fibonacci = " ";
+        let chia5 = " ";
+        for(let i = 0; i < 20; i++) {
+            if(i === 0) {
+                f = 1;
+                f1 = 1;
+                fibonacci += f + " ";
+            } else {
+                f = f0 + f1;
+                f0 = f1;
+                f1 = f;
+                fibonacci += f + " ";
+                console.log(i + " = " + f);
+                if(f % 5 === 0) {
+                    chia5 = f;
+                    break;
+                }
+            }
+        }
+        document.write("Số đầu tiên trong dãy fibonacci chia hết cho 5 là: " + chia5);
+    </script>
 </body>
 </html>

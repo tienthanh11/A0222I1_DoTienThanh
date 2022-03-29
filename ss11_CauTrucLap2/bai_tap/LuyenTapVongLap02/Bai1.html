@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài 1</title>
 </head>
 <body>
-$END$
+    <script>
+        let num = parseInt(prompt("Nhập in number: "));
+        let f = 0, f0 = 0, f1 = 0;
+        let fibonacci = " ";
+        for(let i = 0; i < num; i++) {
+            if(i === 0) {
+                f = 1;
+                f1 = 1;
+                fibonacci += f + " ";
+            } else {
+                f = f0 + f1;
+                f0 = f1;
+                f1 = f;
+                fibonacci += f + " ";
+                console.log(i + " = " + f);
+            }
+        }
+        document.write("Dãy fibonacci đầu tiên là: " + fibonacci);
+    </script>
 </body>
 </html>
