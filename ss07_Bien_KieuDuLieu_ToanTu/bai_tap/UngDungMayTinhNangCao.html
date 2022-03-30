@@ -15,7 +15,7 @@
             <td><input onclick="calculator('(')" type="submit" value="(" style="width: 50px"/></td>
             <td><input onclick="calculator(')')" type="submit" value=")" style="width: 50px"/></td>
             <td><input onclick="calculator('%')" type="submit" value="%" style="width: 50px"/></td>
-            <td><input onclick="clearInput('AC')" type="submit" value="AC" style="width: 50px"/></td>
+            <td><input onclick="clearInput()" type="submit" value="AC" style="width: 50px"/></td>
         </tr>
         <tr style="text-align: center">
             <td><input onclick="calculator(7)" type="submit" value="7" style="width: 50px; background-color: white"/></td>
@@ -50,12 +50,11 @@
             document.getElementById("display").value = str;
         }
         function tinhKetQua() {
-            let result = eval(str);
-            document.getElementById("display").value = str;
-            str = result + " ";
+            let result = eval(document.getElementById("display").value);
+            document.getElementById("display").value = result;
         }
         function clearInput() {
-            str = " ";
+            str = "";
             document.getElementById("display").value = str;
         }
     </script>

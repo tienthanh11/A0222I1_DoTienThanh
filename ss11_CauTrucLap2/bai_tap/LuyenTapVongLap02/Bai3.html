@@ -23,24 +23,30 @@
             document.write("<br>");
         }
         document.write("<br>")
-        document.write("<div style='width: 70px' align='right'>");
+
         for(let i = 0; i < 5; i++) {
+            for(let k = 4; k > i; k--) {
+                document.write("&nbsp&nbsp");
+            }
             for(let j = 0; j <= i; j++) {
                 let sao = "*";
                 document.write(sao);
             }
             document.write("<br>");
         }
-        document.write("</div><br>");
-        document.write("<div style='width: 70px' align='right'>");
+        document.write("<br>");
+
         for(let i = 5; i > 0; i--) {
+            for(let k = 4; k >= i; k--) {
+                document.write("&nbsp&nbsp");
+            }
             for(let j = 0; j < i; j++) {
                 let sao = "*";
                 document.write(sao);
             }
             document.write("<br>");
         }
-        document.write("</div>");
+        document.write("<br>");
         document.write("</h2>");
     </script>
 </body>

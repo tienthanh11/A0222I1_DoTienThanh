@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Máy tính</title>
+    <style>
+        input {
+            width: 25px;
+            background-color: white;
+            color: blue;
+        }
+        input#display {
+            text-align: right;
+            width: 150px;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="4"><input type="text" id="display" /></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator(1)" type="button" value="1"/></td>
+            <td><input onclick="calculator(2)" type="button" value="2"/></td>
+            <td><input onclick="calculator(3)" type="button" value="3"/></td>
+            <td><input onclick="calculator('+')" type="button" value="+"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator(4)" type="button" value="4"/></td>
+            <td><input onclick="calculator(5)" type="button" value="5"/></td>
+            <td><input onclick="calculator(6)" type="button" value="6"/></td>
+            <td><input onclick="calculator('-')" type="button" value="-"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="calculator(7)" type="button" value="7"/></td>
+            <td><input onclick="calculator(8)" type="button" value="8"/></td>
+            <td><input onclick="calculator(9)" type="button" value="9"/></td>
+            <td><input onclick="calculator('*')" type="button" value="×"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td><input onclick="clearInput()" type="button" value="C"/></td>
+            <td><input onclick="calculator(0)" type="button" value="0"/></td>
+            <td><input onclick="tinhKetQua()" type="button" value="="/></td>
+            <td><input onclick="calculator('/')" type="button" value="/"/></td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        let str = " ";
+        function calculator(number) {
+            str += number;
+            document.getElementById("display").value = str;
+        }
+        function tinhKetQua() {
+            let result = eval(document.getElementById("display").value);
+            document.getElementById("display").value = result;
+        }
+        function clearInput() {
+            str = "";
+            document.getElementById("display").value = str;
+        }
+
+    </script>
 </body>
 </html>

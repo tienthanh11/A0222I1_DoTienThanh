@@ -5,19 +5,19 @@
     <title>Bài 7</title>
 </head>
 <body>
-    <script>
-        let sophut = parseInt(prompt("Nhập số phút đã sử dụng:"));
-        let phi;
-        const PHICODINH = 25;
-        if(sophut > 200){
-            phi = (sophut - 200) * 200 + 150 * 400 + 50 * 600;
-        }
-        else if(sophut > 50)
-            phi = (sophut - 50) * 400 + 50 * 600;
-        else
-            phi = sophut * 600;
-        let tong = 0.01 * phi + PHICODINH;
-        alert("Bạn đã gọi " + sophut + " phút. " + "Số tiền phải nộp của bạn là: " + tong);
-    </script>
+<script>
+    let soPhut = parseInt(prompt("Nhập số phút đã sử dụng:"));
+    let phi;
+    const PHICODINH = 25;
+    if (soPhut > 200) {
+        phi = (soPhut - 200) * 200 + 150 * 400 + 50 * 600;
+    } else if (soPhut > 50) {
+        phi = (soPhut - 50) * 400 + 50 * 600;
+    } else {
+        phi = soPhut * 600;
+    }
+    let tong = 0.01 * phi + PHICODINH;
+    alert("Bạn đã gọi " + soPhut + " phút. " + "Số tiền phải nộp của bạn là: " + tong);
+</script>
 </body>
 </html>

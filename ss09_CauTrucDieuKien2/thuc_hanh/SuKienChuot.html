@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Chuột</title>
 </head>
 <body>
-$END$
+    <form>
+        <img id="myImage" src = https://cdn-amz.fadoglobal.io/images/I/71pIC54SASL.jpg style="width: 200px">
+        <p>Click button below to move the images to right</p>
+        <input type="button" value="Click Me" onclick="moveRight()"/>
+    </form>
+    <script>
+        let imObj = null;
+        imObj = document.getElementById('myImage');
+        function init() {
+            imObj = document.getElementById('myImage');
+            imObj.style.position = 'relative';
+            imObj.style.left = '0px';
+        }
+        function moveRight() {
+            imObj.style.left = parseInt(imObj.style.left) + 10 + 'px';
+        }
+        window.onload = init;
+    </script>
 </body>
 </html>

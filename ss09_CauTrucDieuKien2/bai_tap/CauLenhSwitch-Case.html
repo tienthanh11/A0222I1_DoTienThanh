@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Ứng dụng cho phép tính được số ngày trong tháng</title>
 </head>
 <body>
-$END$
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="thang"/>
+                <input onclick="SoNgay()" type="submit" name="TinhSoNgay" value="Tính số ngày"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="ketqua"></span>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function SoNgay() {
+            let inthang = document.getElementById("thang").value;
+            let thang = parseInt(inthang);
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("ketqua").innerHTML = ("Tháng " + thang + " có 31 ngày");
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById("ketqua").innerHTML = ("Tháng " + thang + " có 30 ngày");
+                    break;
+                case 2:
+                    document.getElementById("ketqua").innerHTML = ("Tháng " + thang + " có 28 hoặc 29 ngày");
+                    break;
+                default:
+                    document.getElementById("ketqua").innerHTML = ("Không hợp lệ! Mời nhập lại");
+            }
+        }
+    </script>
 </body>
 </html>

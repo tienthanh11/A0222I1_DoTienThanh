@@ -9,9 +9,9 @@
     let a = parseFloat(prompt("Nhập a: "));
     let b = parseFloat(prompt("Nhập b: "));
     let c = parseFloat(prompt("Nhập c: "));
-    if (a == 0) {
-        if (b == 0) {
-            if (c == 0) {
+    if (a === 0) {
+        if (b === 0) {
+            if (c === 0) {
                 alert("Phương trình vô số nghiệm");
             } else {
                 alert("Phương trình vô nghiệm");
@@ -21,10 +21,10 @@
             alert("Phương trình có nghiệm là: \nx = " + x);
         }
     } else {
-        let delta = b * b - 4 * a * c;
+        let delta = Math.pow(b,2) - 4 * a * c;
         if (delta < 0) {
             alert("Phương trình vô nghiệm");
-        } else if (delta == 0) {
+        } else if (delta === 0) {
             alert("Phương trình có nghiệm kép là: \nx1 = x2 = " + (-b) / (2 * a));
         } else {
             let x1 = (-b + Math.sqrt(delta)) / (2 * a);

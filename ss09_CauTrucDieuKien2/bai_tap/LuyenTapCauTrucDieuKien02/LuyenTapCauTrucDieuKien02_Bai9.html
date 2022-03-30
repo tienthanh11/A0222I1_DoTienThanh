@@ -9,10 +9,14 @@
         let a = parseFloat(prompt("Nhập a: "));
         let b = parseFloat(prompt("Nhập b: "));
         let c = parseFloat(prompt("Nhập c: "));
-        if( a + b > c && b + c > a && a + c > b) {
-            alert( a + " , " + b + " , " + c + " là ba cạnh của một tam giác");
-        } else {
-            alert( a + " , " + b + " , " + c + " không là ba cạnh của một tam giác");
+        if(a>0 && b>0 && c > 0){
+            if((a+b) >c && (b+c) >a && (a+c)>b){
+                alert(a+","+b+","+c+" là một hình tam giác");
+            }else{
+                alert(a+","+b+","+c+" Không phải là một hình tam giác");
+            }
+        }else {
+            alert(a+","+b+","+c+" Không phải là một hình tam giác");
         }
     </script>
 </body>

@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bàn phím</title>
 </head>
-<body>
-$END$
+<body onload="docReady()">
+    <img id="nobita" src="https://freenice.net/wp-content/uploads/2021/09/hinh-anh-Nobita-vui-ve.jpg" style="position: absolute;left:0; top:0" height="200" width="180"/>
+    <script>
+        function upArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+        function downArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+        function leftArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+        function rightArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+        function moveSelection(event) {
+            switch (event.keyCode) {
+                case 37:
+                    leftArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+            }
+        }
+        function docReady() {
+            window.addEventListener('keydown', moveSelection);
+        }
+
+    </script>
 </body>
 </html>
