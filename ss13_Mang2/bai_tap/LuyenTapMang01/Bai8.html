@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào mảng số nguyên là: "));
+        let arrNum = [], min = 0;
+        for(let i = 0; i < n; i++) {
+            arrNum[i] = parseInt(prompt("Nhập số vào mảng là: "));
+        }
+        document.write("Mảng là [" + arrNum + "] <br>");
+        for(let i = 0; i < arrNum.length - 1; i++) {
+            for(let j = i + 1; j < arrNum.length; j++) {
+                if(arrNum[i] < arrNum[j]) {
+                    min = arrNum[i];
+                    arrNum[i] = arrNum[j];
+                    arrNum[j] = min;
+                }
+            }
+        }
+        document.write("Sắp xếp trong mảng giảm dần là: " + arrNum);
+    </script>
+</body>
+</html>

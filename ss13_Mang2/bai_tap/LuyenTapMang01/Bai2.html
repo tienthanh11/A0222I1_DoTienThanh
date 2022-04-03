@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        let arrNum = [];
+        let max = 0, vitri = 0;
+        for(let i = 0; i < 10; i++) {
+            arrNum[i] = parseInt(prompt("Nhập số vào mảng: "));
+        }
+        document.write("Mảng là: [" + arrNum + "] <br>");
+        for(let i = 0; i < arrNum.length; i++) {
+            if(max < arrNum[i]) {
+                max = arrNum[i];
+                vitri = i;
+            }
+        }
+        document.write("Số lớn nhất trong mảng là: " + max + " vị trí trong mảng: " + vitri);
+    </script>
+</body>
+</html>

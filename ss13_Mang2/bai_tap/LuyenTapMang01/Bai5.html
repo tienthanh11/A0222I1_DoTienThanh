@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào mảng số nguyên: "));
+        let arrNum = [], arrNumAm = [];
+        for(let i = 0; i < n; i++) {
+            arrNum[i] = parseInt(prompt("Nhập số vào mảng: "));
+            if(arrNum[i] < 0) {
+                arrNumAm.push(arrNum[i]);
+            }
+        }
+        document.write("Mảng số là [" + arrNum + "] <br>");
+        document.write("Mảng các số âm gồm " + arrNumAm.length + " phần tử. Mảng số nguyên âm [" + arrNumAm + "] <br>");
+    </script>
+</body>
+</html>

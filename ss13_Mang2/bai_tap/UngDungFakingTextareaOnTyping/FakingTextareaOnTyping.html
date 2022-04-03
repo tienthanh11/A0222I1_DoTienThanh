@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+</head>
+<body>
+    <form action="" name="f" style="text-align: center">
+        <h2>Type anthing slowly</h2>
+        <textarea name="textare" id="textare" cols="50" rows="10" onkeydown="setTextArea()"></textarea>
+    </form>
+    <script>
+        let str = "HOW ARE YOU";
+        let syntax = "";
+        function setTextArea() {
+            let area = document.f.textare.value;
+            let doDai = area.length;
+
+            if(doDai > 0) {
+                for(let i = 1; i <= doDai; i++) {
+                    syntax += str[i - 1];
+                    console.log(str[i - 1])
+                    if(i === 12) {
+                        syntax = "";
+                        document.f.textare.value = " ";
+                    }
+                }
+                document.f.textare.value = syntax;
+                syntax = "";
+                let stime = setTimeout("setTextArea()", 1);
+            }
+        }
+    </script>
+</body>
+</html>

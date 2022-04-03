@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vảo mảng số nguyên là: "));
+        let arr = [], arrV = true;
+        let arrNew = [];
+
+        for(let i = 0; i < n; i++) {
+            arr[i] = prompt("Nhập phần tử số nguyên của mảng là: ");
+            if(arr[i] === "V") {
+                arrV = false;
+            }
+            if(arr[i] !== "V") {
+                arrNew.push(arr[i]);
+            }
+        }
+        document.write("Mảng là [" + arr + "] <br>" );
+        if(arrV === false) {
+            document.write("Đã xoá phần tử V. Mảng là [" + arrNew + "] <br>");
+        } else {
+            document.write("V is not in the array");
+        }
+    </script>
+</body>
+</html>

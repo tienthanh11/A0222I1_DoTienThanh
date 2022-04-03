@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        let arrNum = [];
+        let arrLonHon10 = [];
+        for(let i = 0; i < 10; i++) {
+            arrNum[i] = parseInt(prompt("Nhập số vào mảng: "));
+        }
+        document.write("Mảng số [" + arrNum + "] <br>");
+        for(let i = 0; i < arrNum.length; i++) {
+            if(arrNum[i] >= 10) {
+                arrLonHon10.push(arrNum[i]);
+            }
+        }
+        document.write("Các phần tử >= 10 trong mảng số [" + arrLonHon10 + "] <br>");
+    </script>
+</body>
+</html>

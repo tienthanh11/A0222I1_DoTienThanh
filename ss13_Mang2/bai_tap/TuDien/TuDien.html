@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+    <h2>Từ Điển</h2>
+    <input type="text" id="tienganh"/>
+    <input type="button" value="Dịch" onclick="dich()"/>
+    <p id="tiengviet"/>
+    <script>
+        let tiengAnh = document.getElementById("tienganh");
+        console.log(tiengAnh.value);
+        let arrTA = ["how", "old", "are", "you", "i", "am", "fine", "thanks"];
+        let arrTV = ["làm sao", "cũ", "là", "bạn", "tôi", "là", "khoẻ", "cảm ơn"];
+        document.write("Chỉ địch được các từ [ " + arrTA.join() + " ]");
+        let dem = 0;
+        function dich() {
+            for(let i = 0; i < arrTA.length; i++) {
+                if(arrTA[i] === tiengAnh.value) {
+                    dem = 0;
+                    document.getElementById("tiengviet").innerHTML = arrTV[i];
+                    break;
+                } else {
+                    dem++;
+                }
+            }
+            if(dem !== 0) {
+                alert("Không tìm thấy dữ liệu");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Nhập vào một chuỗi là: ");
+        let chuHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let chuThuong = 'abcdefghijklmnopqrstuvwxyz';
+        let result = [];
+        document.write("Dãy kí tự bao gồm: " + str + "<br>");
+        for(let i = 0; i < str.length; i++) {
+            if(chuHoa.indexOf(str[i]) !== -1) {
+                result.push(str[i].toLowerCase());
+            } else if(chuThuong.indexOf(str[i] !== -1)) {
+                result.push(str[i].toUpperCase());
+            } else {
+                result.push(str[i]);
+            }
+        }
+        document.write("Sau khi chuyển đổi: " + result.join(""));
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào mảng số nguyên: "));
+        let arrNum = [];
+        let max = 0, vitri = 0, tongTB = 0;
+        for(let i = 0; i < n; i++) {
+            arrNum[i] = parseInt(prompt("Nhập vào số mảng: "));
+        }
+        document.write("Mảng số là : [" + arrNum + "] <br>");
+        for(let i = 0; i < arrNum.length; i++) {
+            if(max < arrNum[i]) {
+                max = arrNum[i];
+                vitri = i;
+            }
+            tongTB += arrNum[i];
+        }
+        document.write("Số lớn nhất trong mảng là: " + max + " vị trí trong mảng: " + vitri + "<br>");
+        document.write("Tổng trung bình trong mảng là " + tongTB);
+    </script>
+</body>
+</html>

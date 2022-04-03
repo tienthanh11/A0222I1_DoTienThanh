@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào mảng số nguyên là: "));
+        let arrNum = [], mangV = true;
+        for(let i = 0; i < n; i++) {
+            arrNum[i] = prompt("Nhập phần tử số nguyên của mảng là: ");
+            if(arrNum[i] === "V") {
+                mangV = false;
+            }
+        }
+        document.write("Mảng là [" + arrNum + "] <br>" );
+        if(mangV === false) {
+            document.write("V is in the array");
+        } else {
+            document.write("V is not in the array");
+        }
+    </script>
+</body>
+</html>

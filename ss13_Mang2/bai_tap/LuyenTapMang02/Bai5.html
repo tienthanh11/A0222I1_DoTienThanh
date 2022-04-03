@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        /*let kiemTra = true;*/
+        let chuoi1 = prompt("Nhập vào chuỗi 1: ");
+        let chuoi2 = prompt("Nhập vào chuỗi 2: ");
+        document.write("Chuỗi 1: " + chuoi1 + "<br>" + "Chuỗi 2: " + chuoi2 + "<br>");
+        if(chuoi1.length !== chuoi2.length) {
+            document.write("Cả hai chuỗi không giống nhau <br>");
+        } else {
+            for(let i = 0; i < chuoi1.length; i++) {
+                for(let j = 0; j < chuoi2.length; j++) {
+                    if(chuoi1.length === chuoi2.length) {
+                        kiemTra = true;
+                    } else {
+                        kiemTra = false;
+                    }
+                }
+            }
+            if(kiemTra === false) {
+                document.write("Cả hai chuỗi không giống nhau <br>");
+            } else {
+                document.write("Cả hai chuỗi giống nhau <br>");
+            }
+        }
+    </script>
+</body>
+</html>

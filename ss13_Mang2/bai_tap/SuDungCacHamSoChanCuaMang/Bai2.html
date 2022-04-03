@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        let num = prompt("Nhập vào dãy số là: ");
+        let str = num.toString();
+        let result = [str[0]];
+        document.write("Dãy số bao gồm là: " + num + "<br>");
+        for(let x = 1; x < str.length; x++) {
+            if(str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+                result.push('-' + str[x]);
+            }
+            else {
+                result.push(str[x]);
+            }
+        }
+        document.write("Sau khi chèn (-) vào số chẵn là: "+ result.join(""));
+    </script>
+</body>
+</html>

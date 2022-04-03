@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào mảng số nguyên là: "));
+        let arr1 = [], arr2 = [], arr3 = [];
+        for(let i = 0; i < n; i++) {
+            let a = parseInt(prompt("Nhập số vào mảng 1: "));
+            arr1.push(a);
+        }
+        for(let j = 0; j < n; j++) {
+            let b = parseInt(prompt("Nhập só vào mảng 2: "));
+            arr2.push(b);
+        }
+        document.write("Mảng 1: [" + arr1 + "] <br>");
+        document.write("Mảng 2: [" + arr2 + "] <br>");
+        arr3 = arr1;
+        for(let k = 0; k < arr2.length; k++) {
+            arr3.push(arr2[k]);
+        }
+        document.write("Mảng 3: [" + arr3 + "] <br>");
+    </script>
+</body>
+</html>
