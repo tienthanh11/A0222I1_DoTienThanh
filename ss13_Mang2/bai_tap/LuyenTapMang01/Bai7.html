@@ -6,21 +6,26 @@
 </head>
 <body>
     <script>
-        let n = parseInt(prompt("Nhập vảo mảng số nguyên là: "));
-        let arr = [], arrV = true;
-        let arrNew = [];
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let arrV = parseInt(prompt("Nhập vào V: "));
+        let flg = false;
 
-        for(let i = 0; i < n; i++) {
-            arr[i] = prompt("Nhập phần tử số nguyên của mảng là: ");
-            if(arr[i] === "V") {
-                arrV = false;
-            }
-            if(arr[i] !== "V") {
-                arrNew.push(arr[i]);
+        document.write("Mảng bao gồm [" + arr + "] <br>");
+        for(let i = 0; i < arr.length; i++) {
+            if(arrV === arr[i]) {
+                document.write("V is in the array <br>");
+                flg = true;
+                break;
             }
         }
-        document.write("Mảng là [" + arr + "] <br>" );
-        if(arrV === false) {
+        if(flg == true) {
+            let arrNew = arr.filter(function (a) {
+                if(a === arrV) {
+                    return false;
+                }
+                return true;
+            });
+            arrNew.push("0");
             document.write("Đã xoá phần tử V. Mảng là [" + arrNew + "] <br>");
         } else {
             document.write("V is not in the array");

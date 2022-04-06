@@ -6,14 +6,16 @@
 </head>
 <body>
     <script>
-        let arrNum = [];
-        let max = 0, vitri = 0;
-        for(let i = 0; i < 10; i++) {
+        let n = parseInt(prompt("Nhập vào số nguyên trong mảng là: "));
+        let arrNum =[];
+        let vitri = 0;
+        for(let i = 0; i < n; i++) {
             arrNum[i] = parseInt(prompt("Nhập số vào mảng: "));
         }
         document.write("Mảng là: [" + arrNum + "] <br>");
+        let max = arrNum[0];
         for(let i = 0; i < arrNum.length; i++) {
-            if(max < arrNum[i]) {
+            if(max < arrNum[i] ) {
                 max = arrNum[i];
                 vitri = i;
             }

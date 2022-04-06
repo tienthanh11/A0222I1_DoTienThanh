@@ -6,16 +6,16 @@
 </head>
 <body>
     <script>
-        /*let kiemTra = true;*/
         let chuoi1 = prompt("Nhập vào chuỗi 1: ");
         let chuoi2 = prompt("Nhập vào chuỗi 2: ");
+        let kiemTra = true;
         document.write("Chuỗi 1: " + chuoi1 + "<br>" + "Chuỗi 2: " + chuoi2 + "<br>");
         if(chuoi1.length !== chuoi2.length) {
             document.write("Cả hai chuỗi không giống nhau <br>");
         } else {
             for(let i = 0; i < chuoi1.length; i++) {
                 for(let j = 0; j < chuoi2.length; j++) {
-                    if(chuoi1.length === chuoi2.length) {
+                    if(chuoi1[i] === chuoi2[j]) {
                         kiemTra = true;
                     } else {
                         kiemTra = false;

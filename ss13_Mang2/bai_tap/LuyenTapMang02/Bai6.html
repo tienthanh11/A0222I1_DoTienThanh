@@ -6,20 +6,15 @@
 </head>
 <body>
     <script>
-        let arr = new Array(prompt("Nhập vào một chuỗi: "));
-        let arrNum = [];
-        document.write("Mảng bao gồm [" + arr + "] <br>");
-        for(let i = 0; i < arr.length; i++) {
-            for(let j = 0; j < arr[i].length; j++) {
-                if(arr[i][j] === "-") {
-                    arr[i][j] = "_";
-                    arrNum.push("_");
-                } else {
-                    arrNum.push(arr[i][j]);
-                }
+        let a = prompt("Nhập vào 1 chuỗi: ");
+        let b = a.split(" ");
+        document.write("Chuỗi là: " + b.join(" ") + "<br>");
+        for(let i = 0; i < b.length; i++) {
+            if(b[i] === '-') {
+                b[i] = '_';
             }
         }
-        document.write("Mảng sữa lại là: [" + arrNum.join("") + "] <br>");
+        document.write("Chuỗi sau khi đồi là: " + b.join(" "));
     </script>
 </body>
 </html>
