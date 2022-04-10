@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<body>
+    <h3>Add New Product</h3>
+    <div style="width: 350px; height: 30px; background: whitesmoke; padding: 25px 0; text-align: center">
+        <input type="text" id="add" placeholder="New Products" style="width: 210px; height: 25px;"/>
+        <input id="addNew" type="submit" value="Add" onclick="addSP()" style="width: 70px; height: 30px; background: forestgreen; color: white"/>
+        <!--<input id="save" type="button" onclick="save()" value="Save" style="display:none"/>-->
+    </div>
+    <h3>Display All Product</h3>
+    <table border="1" cellspacing="0" cellpadding="0" width="600" style="text-align: center">
+        <tr>
+            <th>Products</th>
+            <th colspan="2"><p id="soLuong" style="color: red"></p></th>
+        </tr>
+        <tbody id="product"></tbody>
+    </table>
+    <script>
+        let listPhone = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redimi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
+        display(listPhone);
+        function count(data) {
+            let soLuong = document.getElementById("soLuong");
+            if(data != null) {
+                if(data > 0) {
+                    soLuong.innerHTML = data + " products";
+                } else {
+                    soLuong.innerHTML = "No products";
+                }
+            }
+        }
+        function display(list) {
+            let data = " ";
+            if(list.length > 0) {
+                for(let i = 0; i < list.length; i++) {
+                    data += "<tr>";
+                    data += "<td style='padding: 10px 0'>" + list[i] + "</td>";
+                    data += "<td style='padding: 10px 0'><button onclick='editSP("+ i +")' value='Edit'>Edit</button></td>";
+                    data += "<td style='padding: 10px 0'><button onclick='deleteSP("+ i +")'>Delete</button></td>";
+                    data += "</tr>";
+                }
+            }
+            count(list.length);
+            document.getElementById("product").innerHTML = data;
+        }
+        function addSP() {
+            let addProduct = document.getElementById("add").value;
+            if(addProduct !== "") {
+                listPhone.push(addProduct);
+            } else {
+                alert("Bạn cần phải nhập thông tin sản phẩm");
+            }
+            display(listPhone);
+            document.getElementById("add").value = " ";
+        }
+        //Cách 1:
+        function editSP(index) {
+            let editName = prompt("Nhập tên mới ", listPhone[index]);
+            listPhone[index] = editName;
+            display(listPhone);
+        }
+        // Cách 2:
+        /*//hiện thị lên thế input
+        function editSP(index) {
+            editId = index;
+            document.getElementById("add").value = listPhone[index];
+            document.getElementById("save").style.display = "block";
+            document.getElementById("addNew").style.display = "none";
+        }
+        //lưu lại giá trị sau khi sửa
+        function save() {
+            listPhone[editId] = document.getElementById("add").value;
+            display(listPhone);
+            document.getElementById("save").style.display = "none";
+            document.getElementById("addNew").style.display = "block";
+        }*/
+        function deleteSP(index) {
+            let conf = confirm("Bạn có muốn xoá sản phẩm " + listPhone[index]);
+            if(conf) {
+                listPhone.splice(index, 1);
+            }
+            display(listPhone);
+        }
+    </script>
+</body>
+</html>

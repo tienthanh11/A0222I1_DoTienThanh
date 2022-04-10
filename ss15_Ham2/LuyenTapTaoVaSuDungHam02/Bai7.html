@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+    <script>
+        function hoanVi(number1, number2) {
+            let tmp = number1;
+            number1 = number2;
+            number2 = tmp;
+            document.write("Sau khi đổi chỗ: " + number1 + " " + number2 + "<br>");
+        }
+        let a = parseInt(prompt("Nhập vào số thứ nhất: "));
+        let b = parseInt(prompt("Nhập vào số thứ hai: "));
+        document.write("Trước khi dổi chỗ: " + a + " " + b + "<br>");
+        hoanVi(a, b);
+    </script>
+</body>
+</html>

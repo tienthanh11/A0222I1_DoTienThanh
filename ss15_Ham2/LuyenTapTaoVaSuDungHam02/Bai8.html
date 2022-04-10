@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+    <script>
+        function daoNguoc(a) {
+            let last = a.length - 1;
+            for(let first = 0; first < last; first++) {
+                let tmp = a[first];
+                a[first] = a[last];
+                a[last] = tmp;
+                last--;
+            }
+            return a;
+        }
+        let n = parseInt(prompt("Nhập vào độ dài của mảng là: "));
+        let arrNum = [];
+        for(let i = 0; i < n; i++) {
+            arrNum[i] = parseInt(prompt("Nhập vào phần tử " + i  + " là:"));
+        }
+        document.write("Mảng bao gồm [" + arrNum + "] <br>");
+        document.write("Mảng sau khi đảo ngược [" + daoNguoc(arrNum) + "]");
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+    <script>
+        function kiemTra(x) {
+            if(x % 2 === 0 || x % 2 === 1) {
+                return true;
+            }
+            return false;
+        }
+        let n = prompt("Nhập vào n: ");
+        if(kiemTra(n)) {
+            alert("Đây là số");
+        } else {
+            alert("Đây là kí tự");
+        }
+    </script>
+</body>
+</html>

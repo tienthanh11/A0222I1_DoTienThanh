@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        function timMin(number) {
+            let min = arrNum[0];
+            let viTri = 0;
+            for (let i = 0; i < number.length; i++) {
+                if(min > arrNum[i]) {
+                    min = arrNum[i];
+                    viTri = i;
+                }
+            }
+            return min;
+        }
+        let arrNum = [];
+        for(let i = 0; i < 3; i++) {
+            arrNum[i] = parseInt(prompt("Nhập vào mảng thứ " + i + " là: "));
+        }
+        document.write("Mảng bao gồm là: [" + arrNum + "] <br>");
+        document.write("Số nhỏ nhất trong mảng là: " + timMin(arrNum));
+    </script>
+</body>
+</html>

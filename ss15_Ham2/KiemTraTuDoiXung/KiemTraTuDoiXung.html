@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Từ ĐỐi Xứng</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(s) {
+            if(s[0] === s[s.length - 1]) {
+                for(let i = 0; i < Math.sqrt(str.length - 1);  i++) {
+                    if(s[i] !== s[s.length - 1 - i]) {
+                        return " không phải là chuỗi đối xứng";
+                    } else {
+                        return " là chuỗi đối xứng";
+                    }
+                }
+            } else {
+                return " không phải là chuỗi đối xứng";
+            }
+        }
+        let str = prompt("Nhập vào một chuỗi kí tự là: ");
+        let result = isPalindrome(str);
+        document.write(str + result);
+
+    </script>
+</body>
+</html>

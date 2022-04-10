@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+    <script>
+        function kiemTraMang(kiTu, array) {
+            let dem = 0;
+            for(let i = 0; i < array.length; i++) {
+                if(kiTu === array[i]) {
+                    dem++;
+                }
+            }
+            if(dem > 0) {
+                return dem;
+            }
+            return  -1;
+        }
+        let arr = ['a', 'b', 'c', 't', 'l', 'v', 'n', 'h', 'i'];
+        let char = prompt("Nhập một ký tự bất kỳ: ");
+        document.write("Mảng bao gồm [" + arr + "] <br>");
+        let kt = kiemTraMang(char, arr);
+        if(kt > 0) {
+            document.write("Có ký tự " + char + " trong mảng");
+        } else {
+            document.write("Không có dữ liệu trong mảng");
+        }
+    </script>
+</body>
+</html>

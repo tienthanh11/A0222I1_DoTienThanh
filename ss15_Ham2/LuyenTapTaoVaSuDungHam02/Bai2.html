@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        function dienTich(r, pi) {
+            let S = Math.pow(r, 2)* pi;
+            return S;
+        }
+        function chuVi(r, pi) {
+            let C = 2 * r * pi;
+            return C;
+        }
+        const pi = 3.14;
+        let r = parseInt(prompt("Nhập bán kính hình tròn: "));
+        let perimeter = chuVi(r, pi);
+        let acreage = dienTich(r, pi);
+        document.write("Chu vi hình tròn là: " + perimeter + "<br>");
+        document.write("Diện tích hình tròn là: " + acreage);
+    </script>
+</body>
+</html>
