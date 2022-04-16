@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây đựng lớp mô tả Temperature</title>
+</head>
+<body>
+    <script>
+        function Temperature(doC) {
+            this.doC = doC;
+
+            this.changeCtoF = changeCtoF;
+            this.changeCtoK = changeCtoK;
+
+            function changeCtoF() {
+                return ((9 * this.doC) / 5) + 32;
+            }
+            function changeCtoK() {
+                return this.doC + 273;
+            }
+        }
+        let temperature = new Temperature(25);
+        document.write("Nhiệt độ " + temperature.doC + " C = " + temperature.changeCtoF() + " F <br>");
+        document.write("Nhiệt độ " + temperature.doC + " C = " + temperature.changeCtoK() + " K");
+    </script>
+</body>
+</html>

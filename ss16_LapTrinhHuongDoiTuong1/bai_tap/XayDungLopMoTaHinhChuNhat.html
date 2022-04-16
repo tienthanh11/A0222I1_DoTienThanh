@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="900" height="400" style="border: 1px solid blue;"></canvas>
+<script>
+    function Rectangle(chieuDai, chieuRong) {
+        this.chieuDai = chieuDai;
+        this.chieuRong = chieuRong;
+
+        this.dienTich = dienTich;
+        this.chuVi = chuVi;
+        this.paintCanvas = paintCanvas;
+
+        function dienTich() {
+            return chieuDai * chieuRong;
+        }
+
+        function chuVi() {
+            return (chieuDai + chieuRong) * 2;
+        }
+
+        function paintCanvas() {
+            let a = document.getElementById("myCanvas");
+            let ctx = a.getContext("2d");
+            ctx.fillStyle = "#ff0000";
+            ctx.fillRect(0, 0, chieuDai, chieuRong);
+        }
+    }
+
+    let chieuDai = parseInt(prompt("Mời nhập vào chiều dài : "));
+    let chieuRong = parseInt(prompt("Mời nhập vào chiều rộng :"));
+
+    let rectangle = new Rectangle(chieuDai, chieuRong);
+    rectangle.paintCanvas();
+    document.write("<br>" + "Chiều dài là: " + rectangle.chieuDai + "<br>");
+    document.write("Chiều rộng là: " + rectangle.chieuRong + "<br>");
+    document.write("Diện tích hình chữ nhật là: " + rectangle.dienTich() + "<br>");
+    document.write("Chu vi hình chữ nhât là: " + rectangle.chuVi());
+</script>
+</body>
+</html>
