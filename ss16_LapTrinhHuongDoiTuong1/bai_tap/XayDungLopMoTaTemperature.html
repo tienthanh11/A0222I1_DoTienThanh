@@ -6,7 +6,7 @@
 </head>
 <body>
     <script>
-        function Temperature(doC) {
+/*        function Temperature(doC) {
             this.doC = doC;
 
             this.changeCtoF = changeCtoF;
@@ -16,6 +16,20 @@
                 return ((9 * this.doC) / 5) + 32;
             }
             function changeCtoK() {
+                return this.doC + 273;
+            }
+        }
+        let temperature = new Temperature(25);
+        document.write("Nhiệt độ " + temperature.doC + " C = " + temperature.changeCtoF() + " F <br>");
+        document.write("Nhiệt độ " + temperature.doC + " C = " + temperature.changeCtoK() + " K");*/
+        class Temperature {
+            constructor(doC) {
+                this.doC = doC;
+            }
+            changeCtoF() {
+                return ((9 * this.doC) / 5) + 32;
+            }
+            changeCtoK() {
                 return this.doC + 273;
             }
         }

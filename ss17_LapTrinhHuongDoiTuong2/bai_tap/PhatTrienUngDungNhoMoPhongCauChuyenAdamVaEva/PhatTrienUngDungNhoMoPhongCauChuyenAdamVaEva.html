@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+    <img src="quatao.jpg"><br>
+    <input type="button" value="Khối Lượng" onclick="donViApple()"> <br>
+    <hr>
+    <img src="adam.jpg"><br>
+    <input type="button" value="Tên" onclick="goiTen(adam)"> <br>
+    <input type="button" value="Giới Tính" onclick="adam.isMale();goiGioiTinh(adam);"><br>
+    <input type="button" value="Nói" onclick="chaoHoi(adam)"><br>
+    <input type="button" value="Cân Nặng" onclick="canNang(adam)"><br>
+    <input type="button" value="Kiểm tra khối lượng của táo" onclick="kiemTraApple(adam)"><br>
+    <input type="button" value="Ăn Táo" onclick="adam.eatApple();anApple(adam);"><br>
+    <hr>
+    <img src="eva.jpg"> <br>
+    <input type="button" value="Tên" onclick="goiTen(eva);"><br>
+    <input type="button" value="Giới Tính" onclick="eva.isFemale();goiGioiTinh(eva)"><br>
+    <input type="button" value="Nói" onclick="chaoHoi(eva);"><br>
+    <input type="button" value="Cân Nặng" onclick="canNang(eva)"> <br>
+    <input type="button" value="Kiểm tra khối lượng của táo" onclick="kiemTraApple(eva)"><br>
+    <input type="button" value="Ăn Táo" onclick="eva.eatApple();anApple(eva)"><br>
+
+    <script type="text/javascript" src="people.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 <body>
 <canvas id="myCanvas" width="900" height="400" style="border: 1px solid blue;"></canvas>
 <script>
-    function Rectangle(chieuDai, chieuRong) {
+/*    function Rectangle(chieuDai, chieuRong) {
         this.chieuDai = chieuDai;
         this.chieuRong = chieuRong;
 
@@ -25,7 +25,7 @@
 
         function paintCanvas() {
             let a = document.getElementById("myCanvas");
-            let ctx = a.getContext("2d");
+            let ctx = a.getContext("2d");x
             ctx.fillStyle = "#ff0000";
             ctx.fillRect(0, 0, chieuDai, chieuRong);
         }
@@ -39,7 +39,52 @@
     document.write("<br>" + "Chiều dài là: " + rectangle.chieuDai + "<br>");
     document.write("Chiều rộng là: " + rectangle.chieuRong + "<br>");
     document.write("Diện tích hình chữ nhật là: " + rectangle.dienTich() + "<br>");
-    document.write("Chu vi hình chữ nhât là: " + rectangle.chuVi());
+    document.write("Chu vi hình chữ nhât là: " + rectangle.chuVi());*/
+    class Rectangle {
+        constructor(chieuDai, chieuRong) {
+            this.chieuDai  = chieuDai;
+            this.chieuRong = chieuRong;
+        }
+        getDienTich() {
+            return this.chieuDai * this.chieuRong;
+        }
+        getChuVi() {
+            return (this.chieuDai + this.chieuRong) * 2;
+        }
+        setChieuDai(chieuDai) {
+            this.chieuDai = chieuDai;
+        }
+        setChieuRong(chieuRong) {
+            this.chieuRong = chieuRong;
+        }
+        paintCanvas() {
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            let color = getRandomColor();
+            let a = document.getElementById("myCanvas");
+            if(a.getContext) {
+                let ctx = a.getContext('2d');
+                ctx.fillStyle = color;
+                ctx.fillRect(x, y, this.chieuDai, this.chieuRong);
+            }
+        }
+    }
+    function getRandomHex() {
+        return Math.floor(Math.random() * 255);
+    }
+    function getRandomColor() {
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green + ")";
+    }
+
+    let rectangle = new Rectangle(400, 800);
+    rectangle.paintCanvas();
+    rectangle.setChieuDai(300);
+    rectangle.setChieuRong(400);
+    document.write("<br>" + "Diện tích hình chữ nhật là: " + rectangle.getDienTich() + "<br>");
+    document.write("Chu vi hình chữ nhật là: " + rectangle.getChuVi());
 </script>
 </body>
 </html>
