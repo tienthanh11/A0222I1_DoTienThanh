@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let numberTu = parseInt(prompt("Nhập vào tử số: "));
+        let numberMau = parseInt(prompt("Nhập vào mẫu số: "));
+        let numerators = [];
+        let denominators = [];
+        for(let i = 0; i < numberTu; i++) {
+            numerators[i] = parseInt(prompt("Nhập số vào mảng của số tử: "));
+        }
+        document.write("Numerators = [" + numerators + "] <br>");
+        for(let i = 0; i < numberMau; i++) {
+            denominators[i] = parseInt(prompt("Nhập số vào mảng của số mẫu: "));
+        }
+        document.write("Denominators = [" + denominators + "] <br>");
+
+        let max = numerators[0] / denominators[0];
+        let viTri = 0;
+        for(let i = 0; i < numerators.length; i++) {
+            let mun = numerators[i] / denominators[i];
+            if(mun > max) {
+                max = mun;
+                viTri = i;
+            }
+        }
+        document.write(max +" là phân số lớn nhất, có chỉ số là " + viTri);
+    </script>
+</body>
+</html>

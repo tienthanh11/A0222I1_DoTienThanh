@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+    <script>
+        let num = prompt("Nhập vào số bất kỳ là: ");
+        let so = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let chu = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+        let result = [];
+        for(let i = 0; i < num.length; i++) {
+            for(let j = 0 ; j < so.length; j++) {
+                if(num[i] == so[j]) {
+                    result.push(chu[j]);
+                }
+            }
+        }
+        document.write(num + " đọc thành chữ là: " + result.join(" "));
+    </script>
+</body>
+</html>

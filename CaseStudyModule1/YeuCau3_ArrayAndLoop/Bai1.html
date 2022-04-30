@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào số nguyên của mảng là: "));
+        let arr = [];
+        for(let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Nhập vào số mảng là: "));
+        }
+        document.write("Mảng bao gồm [" + arr + "] <br>");
+        let prefix = [];
+        for(let i = 0; i < n; i++) {
+            if(i === 0) {
+                prefix[0] = arr[0];
+            } else {
+                prefix[i] = prefix[i - 1] + arr[i];
+            }
+        }
+        document.write("Mảng cộng đồn [" + prefix + "]");
+    </script>
+</body>
+</html>

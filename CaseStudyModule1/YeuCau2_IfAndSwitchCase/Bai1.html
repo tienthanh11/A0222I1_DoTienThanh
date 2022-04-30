@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        let thueSuat, soThue;
+        let luongRong;
+        let luong = parseInt(prompt("Nhập số tiền lương là: "));
+        if(luong > 15) {
+            soThue = luong * 20 / 100;
+            thueSuat = 20;
+        } else if(luong >= 7) {
+            soThue = luong * 10 / 100;
+            thueSuat = 10;
+        } else {
+            soThue = luong + 5 / 100;
+            thueSuat = 5;
+        }
+        luongRong = luong - soThue;
+        document.write("Lương của nhân viên là " + luong + "<br>");
+        document.write("Thuế thu nhập của nhân viên là: " + thueSuat + "% = " + soThue +"<br>");
+        document.write("Số tiền lương rỏng của nhân viên là: " + luongRong);
+    </script>
+</body>
+</html>

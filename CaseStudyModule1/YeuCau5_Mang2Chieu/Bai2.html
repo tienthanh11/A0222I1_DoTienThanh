@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào n: "));
+        let m = parseInt(prompt("Nhập vào m: "));
+
+        function soNguyenTo() {
+            let arr = new Array(n);
+            let primeArray = [];
+            for(let i = 0; i < arr.length; i++) {
+                arr[i] = new Array(m);
+                for(let j = 0; j < arr[i].length; j++) {
+                    arr[i][j] = parseInt(prompt("Nhập giá trị của phần tử + [" + i + "][" + j + "] là: "));
+                }
+            }
+
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    document.write(arr[i][j] + " ");
+                }
+                document.write("<br>");
+            }
+
+            let count = 0;
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    if(checkPrime(arr[i][j])) {
+                        primeArray.push(arr[i][j]);
+                        count++;
+                    }
+                }
+            }
+            document.write("Các số nguyên tố trong mảng 2 chiều là: " + count + "<br>");
+            document.write("Đếm các số nguyên tố trong mảng là: " + primeArray);
+        }
+
+        function checkPrime(num) {
+            if(num <= 1) {
+                return false;
+            }
+            for(let i = 2; i <= Math.sqrt(num); i++) {
+                if(num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        soNguyenTo();
+    </script>
+</body>
+</html>

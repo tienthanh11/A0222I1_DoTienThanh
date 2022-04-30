@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào n: "));
+        let m = parseInt(prompt("Nhập vào m: "));
+        function tongChan() {
+            let arr = new Array(n);
+            for(let i = 0; i < arr.length; i++) {
+                arr[i] = new Array(m);
+                for(let j = 0; j < arr[i].length; j++) {
+                    arr[i][j] = parseInt(prompt("Nhập giá trị của phần tử + [" + i + "][" + j + "] là: "));
+                }
+            }
+
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    document.write(arr[i][j] + " ");
+                }
+                document.write("<br>");
+            }
+
+            let sum = 0;
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    if(arr[i][j] % 2 === 0) {
+                        sum += arr[i][j];
+                    }
+                }
+            }
+            document.write("Tổng các số chắn trong ma trận là: " + sum);
+        }
+        tongChan();
+    </script>
+</body>
+</html>

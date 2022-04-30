@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập vào n: "));
+        let m = parseInt(prompt("Nhập vào m: "));
+        
+        function findMaxAndMin() {
+            let arr = new Array(n);
+            for(let i = 0; i < arr.length; i++) {
+                arr[i] = new Array(m);
+                for(let j = 0; j < arr[i].length; j++) {
+                    arr[i][j] = parseInt(prompt("Nhập giá trị của phần tử + [" + i + "][" + j + "] là: "));
+                }
+            }
+
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    document.write(arr[i][j] + " ");
+                }
+                document.write("<br>");
+            }
+
+            let max = arr[0][0];
+            let min = arr[0][0];
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    if(max < arr[i][j]) {
+                        max = arr[i][j];
+                    }
+                    if(min > arr[i][j]) {
+                        min = arr[i][j];
+                    }
+                }
+            }
+            document.write("Số lớn nhất trong mảng 2 chiều là: " + max + "<br>");
+            document.write("Số nhỏ nhất trong mảng 2 chiều là: " + min);
+        }
+        findMaxAndMin();
+    </script>
+</body>
+</html>

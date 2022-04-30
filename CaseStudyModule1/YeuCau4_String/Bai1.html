@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        function chuanHoa(str) {
+            let resultChar = " ";
+            str = str.toLowerCase();
+            for(let i = 0; i < str.length; i++) {
+                if(i === 0 || str.charAt(i - 1) === " ") {
+                    resultChar += str.charAt(i).toUpperCase();
+                } else {
+                    resultChar += str.charAt(i);
+                }
+            }
+            return resultChar;
+        }
+        function charDaiNhat(str) {
+            let newChar = str.split(" ");
+            let maxChar = newChar[0].length;
+            let str1 = newChar[0];
+            for(let i = 0; i < newChar.length; i++) {
+                if(newChar[i].length > maxChar) {
+                    maxChar = newChar[i].length;
+                    str1 = newChar[i];
+                }
+            }
+            return str1;
+        }
+        function main(str) {
+            let a = chuanHoa(str);
+            let b = charDaiNhat(str);
+            document.write("Chuỗi kí tự sau khi chuẩn hoá là: " + a + "<br>");
+            document.write("Chuỗi kí tự dài nhất là: " + b);
+        }
+        let string = prompt("Nhập vào kí tự: ");
+        document.write("Chuỗi kí tự vừa nhập là: " + string + "<br>");
+        main(string);
+    </script>
+</body>
+</html>

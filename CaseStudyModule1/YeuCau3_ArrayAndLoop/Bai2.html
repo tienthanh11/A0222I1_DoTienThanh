@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập số phần tử trong mảng n: "));
+        let m = parseInt(prompt("Nhập sô phần tử trong mảng m: "));
+        let a = [];
+        let b = [];
+        let c = [];
+        for(let i = 0; i < n; i++) {
+            a[i] = parseInt(prompt("Nhập số mảng A là: "));
+        }
+        document.write("Mảng A bao gồm [" + a + "] <br>");
+        for(let i = 0; i < m; i++) {
+            b[i] = parseInt(prompt("Nhập vào mảng B là: "));
+        }
+        document.write("Mảng B bao gồm [" + b + "] <br>");
+        for (let i = 0; i < b.length; i++) {
+            let flag = false;
+            for (let j = 0; j < a.length; j++) {
+                if (a[j] === b[i]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                c.push(b[i]);
+            }
+        }
+        for (let k = 0; k < c.length; k++) {
+            if (c[k] === c[k + 1]) {
+                c.splice(k, 1);
+            }
+        }
+        for(let i = 0; i < c.length - 1; i++) {
+            for(let j = i + 1; j < c.length; j++) {
+                if(c[i] > c[j]) {
+                    let temp = c[i];
+                    c[i] = c[j];
+                    c[j] = temp;
+                }
+            }
+        }
+        document.write("Mảng C bao gồm [" + c + "]");
+    </script>
+</body>
+</html>

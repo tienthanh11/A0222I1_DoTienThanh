@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+    <script>
+        let h = parseInt(prompt("Nhập vào chiều cao h là: "));
+        let m = h, n = h;
+        for(let i = 1; i <= h; i++) {
+            for(let j = 1; j <= 2 * h - 1; j++) {
+                if(j === m || j === n || i === h) {
+                    document.write(" * ")
+                } else {
+                    document.write("&nbsp&nbsp" + "  ");
+                }
+            }
+            m--;
+            n++;
+            document.write(" <br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        let menu = " ";
+        menu += "==========Danh Sách Menu========== \n";
+        menu += "1. Cafe \n";
+        menu += "2. Cam vắt \n";
+        menu += "3. Nước ép cà rốt \n";
+        menu += "4. Nước ép cà chua \n";
+        menu += "5. Nước lọc \n";
+        menu += "6. Nước dừa \n";
+        menu += "7. Thoát gọi nhóm và thanh toán \n";
+        menu += "================================== \n";
+
+        let chon;
+        let price = 0;
+        let sum = 0;
+        do {
+            chon = parseInt(prompt(menu));
+            switch (chon) {
+                case 1:
+                    alert("Bạn đã chọn Cafe");
+                    price = 12000;
+                    break;
+                case 2:
+                    alert("Bạn đã chọn cam vắt");
+                    price = 18000;
+                    break;
+                case 3:
+                    alert("Bạn đã chọn nước ép cả rốt");
+                    price = 25000;
+                    break;
+                case 4:
+                    alert("Bạn đã chọn nước ép cà chua");
+                    price = 23000;
+                    break;
+                case  5:
+                    alert("Bạn dã chọn nước lọc");
+                    price = 4000;
+                    break;
+                case 6:
+                    alert("Bạn đã chọn nước dừa");
+                    price = 30000;
+                    break;
+                default:
+                    continue;
+            }
+            let soLuong = parseInt(prompt("Giá của một sản phẩm " + price + "\n" + "Xin mời nhập số lượng: "));
+            sum += soLuong * price;
+        } while (chon !== 7);
+        alert("Thành tiền của hoá đơn là: " + sum + " đồng");
+    </script>
+</body>
+</html>

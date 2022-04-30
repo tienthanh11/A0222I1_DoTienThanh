@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        function differentSymbolsNaive(str) {
+            let newStr = [];
+            for(let i = 0; i < str.length; i++) {
+                if(!newStr.includes(str[i])) {
+                    newStr.push(str[[i]]);
+                }
+        }
+        let string = prompt("Nhập vào xâu kí tự là: ");
+        let result = differentSymbolsNaive(string);
+        document.write("s = " + string + "<br>");
+        document.write("differentSymbolsNaive(s) = " + result);
+    </script>
+</body>
+</html>
