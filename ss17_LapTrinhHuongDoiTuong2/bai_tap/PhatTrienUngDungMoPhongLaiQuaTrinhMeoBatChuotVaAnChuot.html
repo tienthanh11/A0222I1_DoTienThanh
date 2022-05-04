@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột</title>
+</head>
+<body>
+    <script>
+        class Rat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.live = true;
+                this.catch = false;
+            }
+            setName(name) {
+                this.name = name;
+            }
+            getName() {
+                return this.name;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            getSpeed() {
+                return this.speed;
+            }
+            getCatch() {
+                return this.catch;
+            }
+            catched() {
+                this.catch = true;
+                return this.catch;
+            }
+            checkMouseStatus() {
+                if(this.getWeight() <= 0) {
+                    this.weight = 0;
+                    this.live = false;
+                    return this.live;
+                } else {
+                    this.live = true;
+                    return this.live;
+                }
+            }
+
+            decrease() {
+                if(this.checkMouseStatus() === true && this.catched()) {
+                    this.weight--;
+                    this.getWeight();
+                } else {
+                    this.checkMouseStatus();
+                }
+            }
+            say() {
+                document.write("Chít Chít !!! <br>");
+            }
+        }
+        class Cat {
+            constructor(name, weight, maxSpeed) {
+                this.name = name;
+                this.weight = weight;
+                this.maxSpeed = maxSpeed;
+                this.speed = 1;
+            }
+            catchMouse(mouse) {
+                if(this.speed >= mouse.getSpeed() && this.speed < this.maxSpeed) {
+                    mouse.catched();
+                } else if(this.speed < mouse.getSpeed() && this.speed < this.maxSpeed) {
+                    this.speed++;
+                    return this.speed;
+                }
+            }
+            eatMouse(mouse) {
+                if(mouse.catched()) {
+                    if(mouse.getWeight() > 0) {
+                        this.weight++;
+                        mouse.decrease();
+                    } else {
+                        mouse.decrease();
+                    }
+                }
+            }
+            say() {
+                document.write("Meo Meo !!! <br>");
+            }
+        }
+        let rat = new Rat("Rat", 10, 5);
+        let cat = new Cat("Cat", 5, 10);
+        document.write("Bắt chuột: <br>");
+        while (rat.getCatch() === false) {
+            document.write("Tốc độ mèo " + cat.speed + "<br>");
+            cat.catchMouse(rat);
+            document.write("Chuột bị bắt " + rat.getCatch() + "<br>");
+        }
+        document.write("Ăn chuột: <br>");
+        while (rat.checkMouseStatus()) {
+            cat.eatMouse(rat);
+            document.write("Khối lượng chuột là: " + rat.weight + "<br>");
+            document.write("Khối lượng mèo là: " + cat.weight + "<br>");
+        }
+    </script>
+</body>
+</html>

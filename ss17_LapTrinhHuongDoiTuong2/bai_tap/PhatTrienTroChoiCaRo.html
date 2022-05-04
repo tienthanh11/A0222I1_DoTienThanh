@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển trò chơi Ca-Ro</title>
+    <style>
+        table, tr, td {
+            border: 1px solid blue;
+            border-collapse: collapse;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        let arr = new Array(20);
+        for(let i = 0; i < arr.length; i++) {
+            arr[i] = new Array(20);
+            for(let j = 0; j < arr[i].length; j++) {
+                arr[i][j] = " ";
+            }
+        }
+        displayCaro();
+
+        function displayCaro() {
+            let data = "<table>";
+            for(let i = 0; i < 20; i++) {
+                data += "<tr>";
+                for(let j = 0; j < 20; j++) {
+                    data += "<td onclick='play(" + i + " , " + j + ")'>" + arr[i][j] + "</td>";
+                }
+                data += "</tr>";
+            }
+            data += "</table>";
+            document.getElementById("result").innerHTML = data;
+        }
+
+        let checkNguoiChoi = true;
+        function play(i, j) {
+            if(checkNguoiChoi && checkedBox(i, j)) {
+                arr[i][j] = "X";
+                checkNguoiChoi = false;
+                if(checkWin1()) {
+                    alert("Người chơi 1 win");
+                }
+            } else if(!checkNguoiChoi && checkedBox(i, j)) {
+                arr[i][j] = "O";
+                checkNguoiChoi = true;
+                if(checkWin2()) {
+                    alert("Người chơi 2 win");
+                }
+            }
+            displayCaro();
+        }
+        
+        function checkedBox(i, j) {
+            if(arr[i][j] === "X" || arr[i][j] === "O") {
+                alert("Ô này đã đánh rồi!!! Vui lòng chọn một ô khác");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkWin1() {
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    if(arr[i][j] === "X") {
+                        //Kiểm tra hàng ngang
+                        if (arr[i][j + 1] === "X" && arr[i][j + 2] === "X" && arr[i][j + 3] === "X" && arr[i][j + 4] === "X") {
+                            return true;
+                        }
+                        //Kiểm tra hàng dọc
+                        if (arr[i + 1][j] === "X" && arr[i + 2][j] === "X" && arr[i + 3][j] === "X" && arr[i + 4][j] === "X") {
+                            return true;
+                        }
+                        //Kiểm tra hướng Đông - Nam
+                        if (arr[i + 1][j + 1] === "X" && arr[i + 2][j + 2] === "X" && arr[i + 3][j + 3] === "X" && arr[i + 4][j + 4] === "X") {
+                            return true;
+                        }
+                        //Kiểm tra hướng Tây - Bắc
+                        if (arr[i + 1][j - 1] === "X" && arr[i + 2][j - 2] === "X" && arr[i + 3][j - 3] === "X" && arr[i + 4][j - 4] === "X") {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        function checkWin2() {
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr[i].length; j++) {
+                    if(arr[i][j] === "O") {
+                        //Kiểm tra hàng ngang
+                        if(arr[i][j + 1] === "O" && arr[i][j + 2] === "O" && arr[i][j + 3] === "O" && arr[i][j + 4] === "O") {
+                            return true;
+                        }
+                        //Kiểm tra hàng dọc
+                        if(arr[i + 1][j] === "O" && arr[i + 2][j] === "O" && arr[i + 3][j] === "O" && arr[i + 5][j] === "O") {
+                            return true;
+                        }
+                        //Kiểm tra hướng Đông - Nam
+                        if(arr[i + 1][j + 1] === "O" && arr[i + 2][j + 2] === "O" && arr[i + 3][j + 3] === "O" && arr[i + 4][j + 4] === "O") {
+                            return true;
+                        }
+                        //Kiểm tra hướng Tây - Bắc
+                        if(arr[i + 1][j - 1] === "O" && arr[i + 2][j - 2] === "O" && arr[i + 3][j - 3] === "O" && arr[i + 4][j - 4] === "O") {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

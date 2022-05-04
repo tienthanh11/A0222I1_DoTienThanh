@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển chương trình sử dụng Romote để điều khiển Tivi</title>
+</head>
+<body>
+    <script>
+        class Tivi {
+            constructor(volume) {
+                this.status = "On";
+                this.channel = 0;
+                this.volume = volume;
+            }
+            turnOnTV() {
+                this.status = "On";
+            }
+            turnOffTV() {
+                this.status = "Off";
+            }
+            getStatusTV() {
+                return this.status;
+            }
+            setChannelTV(channel) {
+                this.channel = channel;
+            }
+            getChannelTV() {
+                return this.channel;
+            }
+            upVolumeTV(number) {
+                this.volume += number;
+            }
+            downVolumeTV(number) {
+                this.volume -= number;
+            }
+            getVolumeTV() {
+                return this.volume;
+            }
+        }
+
+        class Remote {
+            constructor(tivi) {
+                this.tivi = tivi;
+            }
+            turnOn() {
+                this.tivi.turnOnTV();
+            }
+            turnOff() {
+                this.tivi.turnOffTV();
+            }
+            setChannel(number) {
+                this.tivi.setChannelTV(number);
+            }
+            upVolume(number) {
+                this.tivi.upVolumeTV(number);
+            }
+            downVolume(number) {
+                if(this.tivi.getVolumeTV() > number) {
+                    this.tivi.downVolumeTV(number);
+                }
+            }
+        }
+
+        let tivi = new Tivi(20);
+        let remote = new Remote(tivi);
+        document.write("Hiện tại tivi đang " + tivi.getStatusTV() + " Hãy bật tivi lên <br>");
+        remote.turnOn();
+        while (tivi.getStatusTV() === "On") {
+            remote.setChannel(prompt("Nhập kênh bạn muốn xem: "));
+            document.write("Kênh hiện tại của tivi: " + tivi.getChannelTV() + "<br>");
+            document.write("Âm lượng của tivi: " + tivi.getVolumeTV() + "<br>");
+            remote.setChannel(prompt("Nhập kênh bạn muốn xem: "));
+            document.write("Kênh hiện tại của tivi: " + tivi.getChannelTV() + "<br>");
+            document.write("Âm lượng của tivi: " + tivi.getVolumeTV() + "<br>");
+            remote.upVolume(parseInt(prompt("Tăng âm lượng của tivi lên")));
+            document.write("Kênh hiện tại của tivi: " + tivi.getChannelTV() + "<br>");
+            document.write("Âm lượng của tivi: " + tivi.getVolumeTV() + "<br>");
+            remote.downVolume(parseInt(prompt("Giảm âm lượng của tivi xuống")));
+            document.write("Kênh hiện tại của tivi: " + tivi.getChannelTV() + "<br>");
+            document.write("Âm lượng của tivi: " + tivi.getVolumeTV() + "<br>");
+            if(confirm("Bạn có muốn tắt tivi không")) {
+                remote.turnOff();
+            }
+        }
+    </script>
+</body>
+</html>

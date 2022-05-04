@@ -26,13 +26,13 @@
                 for(let j = 0; j < 10; j++) {
                     tableString += '<td onclick="play('+i+', '+j+')" style="width: 30px;height: 30px">' + array[i][j] + "</td>";
                 }
-                tableString += '</td>';
+                tableString += '</tr>';
             }
             tableString += '</table>';
             document.getElementById("result").innerHTML = tableString;
         }
         function play(i, j) {
-            if(checkPlayer1 && isNotData(j, j)) {
+            if(checkPlayer1 && isNotData(i, j)) {
                 array[i][j] = "X";
                 checkPlayer1 = false;
                 if(checkWin()) {
@@ -57,7 +57,7 @@
         }
         function checkWin() {
             for(let i = 0; i < array.length; i++) {
-                for(let j = 0; i < array[i].length; j++) {
+                for(let j = 0; j < array[i].length; j++) {
                     if(array[i][j] === "X") {
                         //Kiểm tra hàng ngang
                         if(array[i][j + 1] === "X" && array[i][j + 2] === "X") {

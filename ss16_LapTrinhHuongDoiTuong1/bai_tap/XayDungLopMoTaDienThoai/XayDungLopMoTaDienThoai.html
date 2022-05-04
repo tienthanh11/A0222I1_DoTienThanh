@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+    <h1>Nokia</h1>
+    <p id="trangthaipin1"></p><br/>
+    Vùng nhớ dùng để lưu tin nhắn đang soạn thảo: <p id="tinnhandangsoanthao1"></p><br/>
+    Vùng nhớ dùng để lưu tin nhắn trong hộp thư đến: <p id="tinnhantronghopthuden1"></p><br/>
+    Vùng nhớ dùng để lưu tin nhắn đã gửi: <p id="tinnhandagui1"></p><br/>
+    <input type="radio" name="checkPhoneStatus1" onclick="turnOnPhone('nokia')"/> Bật
+    <input type="radio" name="checkPhoneStatus1" checked onclick="turnOffPhone('nokia')"/> Tắt <br/>
+    <input type="button" value="Sạc Pin" onclick="sacPin('nokia')"/><br/>
+    <p id="sacpin1"></p><br/>
+    Nhắn tin: <input type="text" id="nhaptin1"/><input type="button" value="Soạn tin nhắn"
+                                                       onclick="soanMessage('nokia')"/><br/><br/>
+    <input type="button" value="Gửi tin nhắn" onclick="guiMessage('iphone')"/><br/><br/>
+    <input type="button" value="Xem tin nhắn" onclick="xemMessage('nokia')"/><br/><br/>
+    <input type="button" value="Nhận tin nhắn" onclick="nhanMessage('nokia')"/><br/><br/>
+    <p id="result1"></p>
+    ======================================================================================== <br/>
+    <h1>iPhone</h1>
+    <p id="trangthaipin2"></p><br/>
+    Vùng nhớ dùng để lưu tin nhắn đang soạn thảo: <p id="tinnhandangsoanthao2"></p><br/>
+    Vùng nhớ dùng để lưu tin nhắn trong hộp thư đến: <p id="tinnhantronghopthuden2"></p><br/>
+    Vùng nhớ dùng để lưu tin nhắn đã gửi: <p id="tinnhandagui2"></p><br/>
+    <input type="radio" name="checkPhoneStatus2" onclick="turnOnPhone('iphone')"/> Bật
+    <input type="radio" name="checkPhoneStatus2" checked onclick="turnOffPhone('iphone')"/> Tắt <br/>
+    <input type="button" value="Sạc Pin" onclick="sacPin('iphone')"/><br/>
+    <p id="sacpin2"></p><br/>
+    Nhắn tin: <input type="text" id="nhaptin2"/><input type="button" value="Soạn tin nhắn" onclick="soanMessage('iphone')"/><br/><br/>
+    <input type="button" value="Gửi tin nhắn" onclick="guiMessage('nokia')"/><br/><br/>
+    <input type="button" value="Xem tin nhắn" onclick="xemMessage('iphone')"/><br/><br/>
+    <input type="button" value="Nhận tin nhắn" onclick="nhanMessage('iphone')"/><br/><br/>
+    <p id="result2"></p>
+    <script src="mobile.js"></script>
+    <script src="display.js"></script>
+</body>
+</html>
