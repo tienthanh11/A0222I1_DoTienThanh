@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bouncing Ball Game</title>
+</head>
+<body onload="gameCase()" onkeydown="Handle(event, false)" onkeyup="Handle(event, true)">
+    <canvas id="myCanvas" width="400" height="700" style="background-color: blue"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        class Ball {
+            constructor(x, y, angle, radius) {
+                this.x = x;
+                this.y = y;
+                this.angle = angle;
+                this.radius = radius;
+                this.collision = false;
+                this.statusFly = false;
+            }
+            update() {
+                if(this.statusFly === true) {
+                    if(this.x < this.radius) {
+                        this.angle = 180 - this.angle;
+                        this.collision = false;
+                    } else if(this.x >= 400 - this.radius) {
+                        this.angle = 180 - this.angle;
+                        this.collision = false;
+                    } else if(this.y <= this.radius) {
+                        this.angle = 360 - this.angle;
+                        this.collision = false;
+                    }
+                    this.y -= 5 * Math.sin(this.angle / 180 * Math.PI);
+                    this.x -= 5 * Math.cos(this.angle / 180 * Math.PI);
+                }
+            }
+            increaseAngle() {
+                if(this.angle < 170) {
+                    this.angle += 1;
+                }
+            }
+            decreaseAngle() {
+                if(this.angle > 10) {
+                    this.angle -= 1;
+                }
+            }
+            drawing() {
+                ctx.fillStyle = "red";
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        let directionLeft = 0;
+        let directionRight = 1;
+        class Bar {
+            constructor(x, y, width, height) {
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.height = height;
+                this.isMoving = false;
+                this.direction = directionLeft;
+                this.speed = 3;
+            }
+            moveLeft() {
+                this.isMoving = true;
+                this.direction = directionLeft;
+            }
+            moveRight() {
+                this.isMoving = true;
+                this.direction = directionRight;
+            }
+            stop() {
+                this.isMoving = false;
+            }
+            update() {
+                if(this.isMoving === true) {
+                    if(this.direction === directionLeft) {
+                        this.x -= this.speed;
+                    } else {
+                        this.x += this.speed;
+                    }
+                }
+            }
+            draw() {
+                ctx.fillStyle = "green";
+                ctx.rect(this.x, this.y, this.width, 15);
+                ctx.fill();
+            }
+        }
+        let gameStart = 1;
+        let gamePlaying = 2;
+        let gameEnd = 3;
+        let highscore = 0;
+        class GameBoard {
+            constructor() {
+                this.score = 0;
+                this.status = gameStart;
+                this.bar = new Bar(160, 600, 80, 15);
+                this.ball = new Ball(this.bar.x + this.bar.width / 2, this.bar.y - this.bar.height, 20, 15);
+            }
+            newGame() {
+                this.score = 0;
+                this.status = gameStart;
+                this.bar = new Bar(160, 600, 80, 15);
+                this.ball = new Ball(this.bar.x + this.bar.width / 2, this.bar.y - this.bar.height, 20, 15);
+            }
+            update() {
+                if(this.ball.y >= 700) {
+                    this.status = gameEnd;
+                }
+                if(this.status === gameStart) {
+                    this.ball.x = this.bar.x + this.bar.width / 2;
+                    this.ball.y = this.bar.y - this.bar.height;
+                } else if(this.status === gamePlaying) {
+                    this.bar.update();
+                    this.ball.update();
+                    this.collision();
+                }
+            }
+            collision() {
+                if(this.status === gamePlaying) {
+                    if(this.ball.collision === false) {
+                        let checkX = (this.ball.x > this.bar.x) && (this.ball.x < this.bar.x + this.bar.width);
+                        let checkY = (this.ball.y + this.ball.radius > this.bar.y) && (this.ball.y + this.ball.radius < this.bar.y + this.bar.height);
+                        if(checkX && checkY) {
+                            this.ball.angle = 360 - this.ball.angle;
+                            this.score += 1;
+                            this.ball.collision = true;
+                            highscore = this.score > highscore ? this.score : highscore;
+                        }
+                    }
+                }
+            }
+            draw() {
+                ctx.clearRect(0, 0, 400, 700);
+                if(this.status === gameStart) {
+                    ctx.beginPath();
+                    ctx.fillStyle = "black";
+                    ctx.font = "20px Arial";
+                    ctx.fillText("PRESS SPACE BUTTON", 80, 350);
+                    ctx.fillText("PRESS SPACE BUTTON", 80, 350);
+                    ctx.fillText("TO START NEW GAME", 85, 390);
+                    ctx.moveTo(this.ball.x, this.ball.y);
+                    ctx.lineTo(this.ball.x - 40 * Math.cos(this.ball.angle / 180 * Math.PI), this.ball.y - 40 * Math.sin(this.ball.angle / 180 * Math.PI));
+                    ctx.stroke();
+                } else if(this.status === gameEnd) {
+                    ctx.fillStyle = "black";
+                    ctx.font = "20px Arial";
+                    ctx.fillText("GAME OVER", 130, 320);
+                    ctx.fillText("PRESS ENTER BUTTON", 80, 350);
+                    ctx.fillText("TO START NEW GAME", 85, 380);
+                }
+                this.bar.draw();
+                ctx.beginPath();
+                this.ball.drawing();
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.font = "10px Arial";
+                ctx.fillText("HIGHSCORE: " + highscore, 320, 15);
+            }
+        }
+        let gameBoard = new GameBoard();
+        function Handle(event, isReleasing) {
+            console.log("Keycode = " + event.keyCode + ". isReleasing = " + isReleasing);
+            keyStatusMap["KEY" + event.keyCode] = isReleasing;
+            if(event.keyCode === 37 && isReleasing === false) {
+                gameBoard.bar.moveLeft();
+            } else if(event.keyCode === 39 && isReleasing === false) {
+                gameBoard.bar.moveRight();
+            } else if(event.keyCode === 38) {
+                gameBoard.ball.increaseAngle();
+            } else if(event.keyCode === 40) {
+                gameBoard.ball.decreaseAngle();
+            } else if(event.keyCode === 32) {
+                gameBoard.status = gamePlaying;
+                gameBoard.ball.statusFly = true;
+            } else if(event.keyCode === 13) {
+                gameBoard.newGame();
+            }
+            if(keyStatusMap["KEY37"] === true && keyStatusMap["KEY39"] === true) {
+                gameBoard.bar.stop();
+            }
+        }
+        function gameCase() {
+            gameBoard.update();
+            gameBoard.draw();
+            requestAnimationFrame(gameCase);
+        }
+        let keyStatusMap = {};
+    </script>
+</body>
+</html>

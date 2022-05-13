@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        function char(str) {
+            let count = 0;
+            for(let i = 0; i < str.length; i++) {
+                if (str[i] >= 'A' && str[i] <= "Z") {
+                    count++;
+                }
+            }
+            if(count > 0) {
+                document.write("Kết quả là: " + count);
+            } else {
+                document.write("The string is not");
+            }
+        }
+        let string = prompt("Nhập vào kí tự: ");
+        document.write("Chuỗi kí tự vừa nhập là: " + string + "<br>");
+        char(string);
+    </script>
+</body>
+</html>

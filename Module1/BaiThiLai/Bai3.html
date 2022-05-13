@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        th,td{
+            padding:  10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quản lý sách</h2>
+    <div>
+        <p id="mylist"></p>
+    </div>
+    <div>
+        <input type="button" id="addOld" value="Thêm sách đã có">
+        <input onclick="addSach()" type="button" id="addNew" value="Thêm sách mới">
+        <input onclick="muonSach()" type="button" id="muonSach" value="Mượn sách">
+        <input onclick="displayMax()" type="button" id="displayMax" value="Hiển thị sách nhiều nhất">
+    </div>
+    <script>
+        class Sach {
+            constructor(maSoSach, tenSach, namXuatBan, soQuyen, status) {
+                this.maSoSach = maSoSach;
+                this.tenSach = tenSach;
+                this.namXuatBan = namXuatBan;
+                this.soQuyen = soQuyen;
+                this.status = status;
+            }
+            setMaSoSach(maSoSach) {
+                this.maSoSach = maSoSach;
+            }
+            getMaSoSach() {
+                return this.maSoSach;
+            }
+            setTenSach(tenSach) {
+                this.tenSach = tenSach;
+            }
+            getTenSach() {
+                return this.tenSach;
+            }
+            setNamXuatBan(namXuatBan) {
+                this.namXuatBan = namXuatBan;
+            }
+            getNamXuatBan() {
+                return this.namXuatBan;
+            }
+            setSoQuyen(soQuyen) {
+                this.soQuyen = soQuyen;
+            }
+            getSoQuyen() {
+                return this.soQuyen;
+            }
+            setStatus(status) {
+                this.status = status;
+            }
+            getStatus() {
+                return this.status;
+            }
+        }
+        let arraySach = [];
+        arraySach[0] = new Sach('12345','Toán','2000','3','True');
+        arraySach[1] = new Sach('23456','Văn','1998','4','True');
+        arraySach[2] = new Sach('37456','Tiếng Anh','1999','5','False');
+        function displaySach(arrSach) {
+            let str ='<table border="1">'
+            str +='<tr>' + '<th>MaSoSach</th>' + '<th>TenSach</th>' + '<th>NamXuatBan</th>'
+                + '<th>SoQuyen</th>'+ '<th>TinhTrang</th>' + '</tr>'
+            for (let i =0;i<arrSach.length;i++){
+                str+='<tr>'+'<td>'+arraySach[i].getMaSoSach() +'</td>'+'<td>'+ arraySach[i].getTenSach()+ '</td>'+'<td>' + arraySach[i].getNamXuatBan()+ '</td>'
+                    +'<td>' +arraySach[i].getSoQuyen()+ '</td>'+'<td>' + arraySach[i].getStatus()+ '</td>' + '</tr>'
+            }
+            str +='</table>';
+            document.getElementById("mylist").innerHTML = str;
+        }
+        displaySach(arraySach);
+        function addSach() {
+            let id = parseInt(prompt("Nhập vào mã sách cần thêm:"));
+            let name = prompt("Nhập vào tên sách cần tên: ");
+            let reName = name.split(" ");
+            let newName = "";
+            for (let i of reName){
+                if (i === "") continue;
+                newName += i.charAt(0).toUpperCase() + i.substring(1).toLowerCase() + " ";
+            }
+            let year;
+            do {
+                year = parseInt(prompt("Nhập vào năm sản xuất: "));
+                if (year <= 0 || year > 2022){
+                    alert("Nhập năm sai! Vui lòng nhập lại ");
+                }
+            }while (year <= 0 || year > 2022 );
+            let quyenSach;
+            do {
+                quyenSach= parseInt(prompt("Nhập vào số quyển sách "));
+                if (quyenSach <= 0){
+                    alert("Số lương phải lớn hơn 0! Vui lòng nhập lại");
+                }
+            }while (quyenSach <= 0);
+            let status = true;
+            let sach = new Sach(id,newName,year,quyenSach,status);
+            arraySach.push(sach);
+            displaySach(arraySach);
+        }
+        function muonSach() {
+            let id = parseInt(prompt("Nhâp mã sách cần mượn là: "));
+            let soLuong = parseInt(prompt("Nhập số lượng cần mượn là: "));
+            letc
+        }
+    </script>
+</body>
+</html>

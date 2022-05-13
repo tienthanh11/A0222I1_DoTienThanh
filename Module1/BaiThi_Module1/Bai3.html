@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+       function soNguyenTo(array) {
+           for(let i = 0; i < array.length; i++) {
+               if(array[i] < 2) {
+                   array.splice(i, 1);
+               } else {
+                   for(let j = 2; j <= Math.sqrt(array[i]); j++) {
+                       if(array[i] % j === 0) {
+                           array.splice(i, 1);
+                       }
+                   }
+               }
+           }
+           return array;
+       }
+       let arr = [];
+       let n = parseInt(prompt("Nhập vào số phần tử: "));
+       for(let i = 0; i < n; i++) {
+           arr[i] = parseInt(prompt("Nhập số vào mảng: "));
+       }
+       document.write("Mảng bao gồm [" + arr + "] <br>");
+       let result = soNguyenTo(arr);
+       // for(let i = 0; i < n - 1; i++) {
+       //     for(let j = i + 1; j < n; j++) {
+       //         if(arr[i] > arr[j]) {
+       //             let temp = arr[i];
+       //             arr[i] = arr[j];
+       //             arr[j] = temp;
+       //         }
+       //     }
+       // }
+       result.sort(function (a, b) {
+            return a - b;
+       });
+       document.write("Các số nguyên tố [" + result + "] <br>");
+    </script>
+</body>
+</html>

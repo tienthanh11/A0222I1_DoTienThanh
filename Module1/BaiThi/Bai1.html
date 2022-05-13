@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        let arr = [];
+        let arrNhoHon50 = [];
+        let n = parseInt(prompt("Nhấp số phần tử: "));
+        for(let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Nhập vào số trong mảng: "));
+        }
+        document.write("Mảng bao gồm [" + arr + "] <br>");
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] <= 50) {
+                arrNhoHon50.push(arr[i]);
+            }
+        }
+        document.write("Các phần từ <= 50 trong mảng [" + arrNhoHon50 + "] <br>");
+        let le = 0;
+        let count = 0;
+        for(let i = 0; i < arrNhoHon50.length; i++) {
+            if(arrNhoHon50[i] % 2 !== 0 && i % 2 === 0) {
+                le += arrNhoHon50[i];
+                count++;
+
+            }
+        }
+        let tb = le / count;
+        document.write(le + "<br>");
+        document.write(count + "<br>");
+        document.write("Trung bình công: " + tb);
+    </script>
+</body>
+</html>

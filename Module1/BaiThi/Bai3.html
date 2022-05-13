@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        th,td{
+            padding:  10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p id="list"></p>
+</div>
+<div>
+    <input type="button" id="addOld" value="Thêm sách đã có">
+    <input onclick="addBook()" type="button" id="addNew" value="Thêm sách mới">
+    <input onclick="borrowBooks()" type="button" id="borrow" value="Mượn sách">
+    <input onclick="displayMax()" type="button" id="displayMax" value="Hiển thị sách nhiều nhất">
+</div>
+<div>
+    <p id="maxQuantity"></p>
+</div>
+</body>
+<script>
+    class Books{
+        constructor(id,name,year,quantity,status) {
+            this.id = id;
+            this.name = name;
+            this.year = year;
+            this.quantity = quantity;
+            this.status = status;
+        }
+    }
+    let arrBooks = [
+        {
+            id : 111,
+            name : "abc",
+            year : 2022,
+            quantity : 1,
+            status : true
+        },
+        {
+            id : 112,
+            name : "Pokemon",
+            year : 2022,
+            quantity : 3,
+            status : true
+        },
+        {
+            id : 113,
+            name : "Dac Nhan Tam",
+            year : 2000,
+            quantity : 10,
+            status : true
+        },
+    ];
+    function displayBooks(arrBooks) {
+        let str ='<table border="1">'
+        str +='<tr>' + '<th>MaSoSach</th>' + '<th>TenSach</th>' + '<th>NamXuatBan</th>'
+            + '<th>SoQuyen</th>'+ '<th>TinhTrang</th>' + '</tr>'
+        for (let i =0;i<arrBooks.length;i++){
+            str+='<tr>'+'<td>'+arrBooks[i].id +'</td>'+'<td>'+ arrBooks[i].name+ '</td>'+'<td>' +arrBooks[i].year+ '</td>'
+                +'<td>' +arrBooks[i].quantity+ '</td>'+'<td>' +arrBooks[i].status+ '</td>' + '</tr>'
+        }
+        str +='</table>';
+        document.getElementById("list").innerHTML = str;
+    }
+    displayBooks(arrBooks);
+    // function addId() {
+    //     let number = parseInt(prompt("Input id"))
+    // }
+    function addBook() {
+        let id = parseInt(prompt("Nhap vao id sach can them "));
+        let name = prompt("Nhap vao ten sach can them: ");
+        let reName = name.split(" ");
+        let newName = "";
+        for (let i of reName){
+            if (i=="") continue;
+            newName += i.charAt(0).toUpperCase() + i.substring(1).toLowerCase()+" ";
+        }
+        let year;
+        do {
+            year = parseInt(prompt("Nhap vao nam san xuat: "));
+            if (year<=0 || year>2022){
+                alert("Nhap nam sai! Vui long nhap lai ");
+            }
+        }while (year<=0 || year>2022 );
+        let quantity;
+        do {
+            quantity= parseInt(prompt("Nhap vao so quyen sach "));
+            if (quantity<=0){
+                alert("So luong phai lon hon 0! Vui long nhap lai ");
+            }
+        }while (quantity<=0);
+        let status = true;
+        let book = new Books(id,newName,year,quantity,status);
+        arrBooks.push(book);
+        displayBooks(arrBooks);
+    }
+    // function displayMax() {
+    //     let index=0;
+    //     let str = '';
+    //     let max = arrBooks[0].quantity;
+    //     for (let i=0;i<arrBooks.length;i++){
+    //         if (max<arrBooks[i].quantity){
+    //             max = arrBooks[i].quantity;
+    //             index =i;
+    //         }
+    //     }
+    //     str += 'Id: ' + arrBooks[index].id + "<br>"+ 'Name: ' + arrBooks[index].name +
+    //         "<br>" + 'Year Of Manufacture: ' + arrBooks[index] .year +  "<br>" + 'Quantity:' + arrBooks[index].quantity
+    //         + "<br>" + 'Status: ' + arrBooks[index].status;
+    //     document.getElementById("maxQuantity").innerHTML = str;
+    // }
+    // function  borrowBooks() {
+    //     let id = parseInt(prompt("Nhap id sach can muon: "));
+    //     let soluong = parseInt(prompt("Nhap so luong can muon"));
+    //     let checkId = false;
+    //     for (let i=0;i<arrBooks.length;i++){
+    //         if (arrBooks[i].id===id){
+    //             if (soluong<=arrBooks[i].quantity){
+    //                 alert("Ban da muon sach thanh cong!");
+    //                 arrBooks[i].quantity= arrBooks[i].quantity - soluong;
+    //                 checkId = true;
+    //             }else {
+    //                 checkId = true;
+    //                 alert("So luong sach khong du");
+    //             }
+    //         }
+    //         if (arrBooks[i].quantity==0){
+    //             arrBooks[i].status = false;
+    //         }
+    //     }
+    //     if (!checkId){
+    //         alert("Ban da nhap sai id")
+    //     }
+    //     displayBooks(arrBooks)
+    // }
+</script>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #content th,tr,td{
+            padding: 5px;
+        }
+        #content button{
+            padding: 5px;
+            color: white;
+            background: #022a5e;
+            font-size: 14px;
+            border: #1d72e1 solid 0.5px;
+        }
+    </style>
+</head>
+<body>
+<h3>
+    Mobile
+</h3>
+<input type="text" id="ma" placeholder="Enter new mã điện thoại">
+<input type="text" id="ten" placeholder="Enter new tên">
+<input type="text" id="hang" placeholder="Enter new hãng sản xuất">
+<input type="text" id="gia" placeholder="Enter new giá">
+<button onclick="createNewSoDienThoai()">ADD</button>
+<h3>
+    ALL MOBILE
+</h3>
+<div id="content"></div>
+<script>
+    class SoDienThoai{
+        constructor(ma,ten,hang,gia) {
+            this.ma = ma;
+            this.ten = ten;
+            this.hang = hang;
+            this.gia = gia;
+        }
+        setMa(ma){
+            this.ma = ma;
+        }
+        getMa(){
+            return this.ma;
+        }
+        setTen(ten){
+            this.ten = ten;
+        }
+        getTen(){
+            return this.ten;
+        }
+        setHang(hang){
+            this.hang = hang;
+        }
+        getHang(){
+            return this.hang;
+        }
+        setGia(gia){
+            this.gia = gia;
+        }
+        getGia(){
+            return this.gia;
+        }
+    }
+    let soDienThoai = [];
+    soDienThoai[0] = new SoDienThoai('máy 01','iphone 11pro max','apple','25000000');
+    soDienThoai[1] = new SoDienThoai('máy 02','samsung galaxy','samsung','20000000');
+    soDienThoai[2] = new SoDienThoai('máy 03','xiaomi','china','10000000');
+
+    function displaySoDienThoai() {
+        let table = '<table border="1px" style="border-collapse: collapse; text-align: center;">' +
+            '<tr><th>Mã Điện Thoại</th>' +
+            '<th>Tên</th>' +
+            '<th>Hãng Sản Xuất</th>' +
+            '<th>Giá</th>' +
+            '<th>' + soDienThoai.length + ' Số người gửi vào</th></tr>';
+        for (let i = 0; i < soDienThoai.length; i++) {
+            table += '<tr><td>' + soDienThoai[i].getMa() + '</td>' +
+                '<td>' + soDienThoai[i].getTen() + '</td>' +
+                '<td>' + soDienThoai[i].getHang() + '</td>' +
+                '<td>' + soDienThoai[i].getGia() + '</td>' +
+                '<td><button onclick="deleteSoDienThoai(' + i + ')">Delete</button> </td>' +
+                '</tr>';
+        }
+        table += '</table>';
+        document.getElementById("content").innerHTML = table;
+    }
+    function deleteSoDienThoai(index) {
+        let a = confirm('Bạn có muốn xóa sổ điện thoại');
+        if (a === true){
+            soDienThoai.splice(index,1);
+            displaySoDienThoai();
+        }else {
+            displaySoDienThoai();
+        }
+    }
+    function createNewSoDienThoai() {
+        let a;
+        let ma = document.getElementById("ma").value;
+        let ten = document.getElementById("ten").value;
+        let hang = document.getElementById("hang").value;
+        let gia = document.getElementById("gia").value;
+        for (let i = 0; i < soDienThoai.length; i++) {
+            if (ma === soDienThoai[i].getMa()){
+                alert('Vui lòng nhập lại vì đã có người sử dụng điện thoại này');
+            }else {
+                a = true;
+            }
+        }
+        if (a === true){
+            let DienThoai = new SoDienThoai(ma, ten, hang, gia);
+            soDienThoai.push(DienThoai);
+            displaySoDienThoai();
+            document.getElementById("ma").value = "";
+            document.getElementById("ten").value = "";
+            document.getElementById("hang").value = "";
+            document.getElementById("gia").value = "";
+        }
+    }
+    displaySoDienThoai();
+</script>
+</body>
+</html>

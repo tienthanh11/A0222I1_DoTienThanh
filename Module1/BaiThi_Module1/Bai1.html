@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        /*let arrayNum = [];
+        let arrayNhoHon20 = [];
+        let n = parseInt(prompt("Nhập số n: "));
+        for(let i = 0; i < n; i++) {
+            arrayNum[i] = parseInt(prompt("Nhập số vào mảng là: "));
+        }
+        document.write("Mảng số [" + arrayNum + "] <br>");
+        for(let i = 0; i < arrayNum.length; i++) {
+            if(arrayNum[i] <= 20) {
+                arrayNhoHon20.push(arrayNum[i]);
+            }
+        }
+        document.write("Các phần tử <= 20 trong mảng [" + arrayNhoHon20 + "] <br> ");
+        let chan = 0;
+        let arrChan = [];
+        let le = 0;
+        let arrLe = [];
+        for(let i = 0; i < arrayNhoHon20.length; i++) {
+            if(arrayNhoHon20[i] % 2 === 0) {
+                chan += arrayNhoHon20[i];
+                arrChan.push(arrayNhoHon20[i]);
+            } else {
+                le += arrayNhoHon20[i];
+                arrLe.push(arrayNhoHon20[i]);
+            }
+        }
+        let result = chan - le;
+        document.write("Các số trong mảng chẳn là: " + arrChan  + " - Tổng của số chẳn là: " + chan + "<br>");
+        document.write("Các số trong mảng lẻ là: " + arrLe + " - Tổng của số lẻ là: " + le + "<br>");
+        document.write("Hiệu của tổng số chẳn và số lẻ là: " + result);*/
+        let arr = [];
+        let n = parseInt(prompt("Nhập vào số phần tử: "));
+        for(let i = 0; i < n; i++){
+            arr[i] = parseInt(prompt("Nhập vào phần tử trong mảng là: "));
+        }
+        document.write("Mảng bao gồm [" + arr + "] <br>");
+
+        function soNguyenTo(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < 2) {
+                    return false;
+                } else {
+                    for (let i = 2; i <= Math.sqrt(arr[i]); i++) {
+                        if (arr[i] % i === 0) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        let kq = soNguyenTo(arr);
+        for(let i = 0; i < arr.length; i++) {
+            if(kq === true) {
+                document.write("Các số nguyên tố trang mảng [" + arr[i] + "] <br>");
+            }
+        }
+    </script>   
+</body>
+</html>
