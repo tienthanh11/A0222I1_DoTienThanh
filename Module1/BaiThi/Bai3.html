@@ -74,16 +74,16 @@
         document.getElementById("list").innerHTML = str;
     }
     displayBooks(arrBooks);
-    // function addId() {
-    //     let number = parseInt(prompt("Input id"))
-    // }
+/*    function addId() {
+        let number = parseInt(prompt("Input id"))
+    }*/
     function addBook() {
         let id = parseInt(prompt("Nhap vao id sach can them "));
         let name = prompt("Nhap vao ten sach can them: ");
         let reName = name.split(" ");
         let newName = "";
         for (let i of reName){
-            if (i=="") continue;
+            if (i === "") continue;
             newName += i.charAt(0).toUpperCase() + i.substring(1).toLowerCase()+" ";
         }
         let year;
@@ -105,44 +105,44 @@
         arrBooks.push(book);
         displayBooks(arrBooks);
     }
-    // function displayMax() {
-    //     let index=0;
-    //     let str = '';
-    //     let max = arrBooks[0].quantity;
-    //     for (let i=0;i<arrBooks.length;i++){
-    //         if (max<arrBooks[i].quantity){
-    //             max = arrBooks[i].quantity;
-    //             index =i;
-    //         }
-    //     }
-    //     str += 'Id: ' + arrBooks[index].id + "<br>"+ 'Name: ' + arrBooks[index].name +
-    //         "<br>" + 'Year Of Manufacture: ' + arrBooks[index] .year +  "<br>" + 'Quantity:' + arrBooks[index].quantity
-    //         + "<br>" + 'Status: ' + arrBooks[index].status;
-    //     document.getElementById("maxQuantity").innerHTML = str;
-    // }
-    // function  borrowBooks() {
-    //     let id = parseInt(prompt("Nhap id sach can muon: "));
-    //     let soluong = parseInt(prompt("Nhap so luong can muon"));
-    //     let checkId = false;
-    //     for (let i=0;i<arrBooks.length;i++){
-    //         if (arrBooks[i].id===id){
-    //             if (soluong<=arrBooks[i].quantity){
-    //                 alert("Ban da muon sach thanh cong!");
-    //                 arrBooks[i].quantity= arrBooks[i].quantity - soluong;
-    //                 checkId = true;
-    //             }else {
-    //                 checkId = true;
-    //                 alert("So luong sach khong du");
-    //             }
-    //         }
-    //         if (arrBooks[i].quantity==0){
-    //             arrBooks[i].status = false;
-    //         }
-    //     }
-    //     if (!checkId){
-    //         alert("Ban da nhap sai id")
-    //     }
-    //     displayBooks(arrBooks)
-    // }
+    function displayMax() {
+        let index=0;
+        let str = '';
+        let max = arrBooks[0].quantity;
+        for (let i=0;i<arrBooks.length;i++){
+            if (max<arrBooks[i].quantity){
+                max = arrBooks[i].quantity;
+                index =i;
+            }
+        }
+        str += 'Id: ' + arrBooks[index].id + "<br>"+ 'Name: ' + arrBooks[index].name +
+            "<br>" + 'Year Of Manufacture: ' + arrBooks[index] .year +  "<br>" + 'Quantity:' + arrBooks[index].quantity
+            + "<br>" + 'Status: ' + arrBooks[index].status;
+        document.getElementById("maxQuantity").innerHTML = str;
+    }
+    function  borrowBooks() {
+        let id = parseInt(prompt("Nhap id sach can muon: "));
+        let soluong = parseInt(prompt("Nhap so luong can muon"));
+        let checkId = false;
+        for (let i=0;i<arrBooks.length;i++){
+            if (arrBooks[i].id===id){
+                if (soluong<=arrBooks[i].quantity){
+                    alert("Ban da muon sach thanh cong!");
+                    arrBooks[i].quantity= arrBooks[i].quantity - soluong;
+                    checkId = true;
+                }else {
+                    checkId = true;
+                    alert("So luong sach khong du");
+                }
+            }
+            if (arrBooks[i].quantity === 0){
+                arrBooks[i].status = false;
+            }
+        }
+        if (!checkId){
+            alert("Ban da nhap sai id")
+        }
+        displayBooks(arrBooks)
+    }
 </script>
 </html>
