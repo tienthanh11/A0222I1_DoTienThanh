@@ -1,4 +1,4 @@
-package ss01_IntroductionToJava.BaoTap.b2;
+package ss01_IntroductionToJava.BaiTap.b2;
 
 import java.util.*;
 
