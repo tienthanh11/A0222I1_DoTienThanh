@@ -8,11 +8,11 @@ public class Test {
         System.out.println("Enter color");
         String color=input.nextLine();
         System.out.println("Enter side1");
-        double side1= input.nextDouble();
+        double side1= Double.parseDouble(input.nextLine());
         System.out.println("Enter side2");
-        double side2= input.nextDouble();
+        double side2= Double.parseDouble(input.nextLine());
         System.out.println("Enter side3");
-        double side3 =input.nextDouble();
+        double side3= Double.parseDouble(input.nextLine());
         Triangle triangle = new Triangle(side1, side2, side3, color,true);
         System.out.println(triangle.toString());
     }

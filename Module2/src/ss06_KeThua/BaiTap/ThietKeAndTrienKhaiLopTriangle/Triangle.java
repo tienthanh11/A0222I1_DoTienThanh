@@ -40,19 +40,19 @@ public class Triangle extends Shape {
     }
 
     public double getPerimeter(){
-        return this.side1 + this.side2 + this.side3;
+        return side1 + side2 + side3;
     }
     public double getArea(){
-        double p = this.getPerimeter() /2 ;
-        return Math.sqrt((p - this.side1) * (p - this.side2) * (p - this.side3));
+        double p = getPerimeter() /2 ;
+        return Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
 
     @Override
     public String toString() {
         return "Triangle{" +
-                "side1=" + getSide1() +
-                ", side2=" + getSide2() +
-                ", side3=" + getSide3() +
+                "side1=" +  side1 +
+                ", side2=" + side2 +
+                ", side3=" + side3 +
                 ", color: " + getColor() +
                 ", perimeter: " + getPerimeter() +
                 ", area: " + getArea() +
