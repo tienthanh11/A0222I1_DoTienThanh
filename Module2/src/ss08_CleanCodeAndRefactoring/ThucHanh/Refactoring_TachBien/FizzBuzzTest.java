@@ -1,0 +1,56 @@
+package ss08_CleanCodeAndRefactoring.ThucHanh.Refactoring_TachBien;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class FizzBuzzTest {
+    FizzBuzz fb = new FizzBuzz();
+
+    @Test
+    void testFizz3() {
+        int number = 3;
+        String expected = "Fizz";
+        String result = fb.fizzBuzz(number);
+        assertEquals(expected, result);
+    }
+
+     @Test
+    void testFizz6() {
+        int number = 6;
+        String expected = "Fizz";
+        String result = fb.fizzBuzz(number);
+        assertEquals(expected, result);
+     }
+
+     @Test
+    void testBuzz5() {
+        int number = 5;
+        String expected = "Buzz";
+        String result = fb.fizzBuzz(number);
+        assertEquals(expected, result);
+     }
+
+     @Test
+    void testBuzz10() {
+        int number = 10;
+        String expected = "Buzz";
+        String result = fb.fizzBuzz(number);
+        assertEquals(expected, result);
+     }
+
+     @Test
+    void  testFizzBuzz15() {
+        int number = 15;
+        String expected = "FizzBuzz";
+        String result = fb.fizzBuzz(number);
+        assertEquals(expected, result);
+     }
+
+     @Test
+    void testFizzBuzz30() {
+        int number = 30;
+        String expected = "FizzBuzz";
+        String result = fb.fizzBuzz(number);
+        assertEquals(expected, result);
+     }
+}
