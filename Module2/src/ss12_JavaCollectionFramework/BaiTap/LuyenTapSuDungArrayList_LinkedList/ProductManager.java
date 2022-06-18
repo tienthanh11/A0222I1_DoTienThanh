@@ -23,7 +23,7 @@ public class ProductManager {
     public void editProduct() {
         System.out.println("Nhập vào id muốn sừa: ");
         int idEdit = Integer.parseInt(scanner.nextLine());
-        for(int i = 0; i < productList.size(); i++) {
+        for(int i = 0; i < productList.size(); i++) {   
             if(productList.get(i).getId() == idEdit) {
                 System.out.println("Nhập tên muốn sửa: ");
                 String editName = scanner.nextLine();
@@ -34,9 +34,6 @@ public class ProductManager {
             } else {
                 System.out.println("Không có sản phảm này");
             }
-        }
-        for(Product product : productList) {
-            System.out.println(product);
         }
     }
 
@@ -50,9 +47,6 @@ public class ProductManager {
             } else {
                 System.out.println("Không có id cần xoá");
             }
-        }
-        for(Product product : productList) {
-            System.out.println(product);
         }
     }
 
@@ -70,29 +64,19 @@ public class ProductManager {
         for(int i = 0; i < productList.size(); i++) {
             if(productList.get(i).getName().toLowerCase().contains(strProduct.toLowerCase())) {
                 arrayList.add(productList.get(i));
-            }
-        }
-        if(arrayList.size() == 0) {
-            System.out.println("Không có sản phẩm");
-        } else {
-            for (Product product : arrayList) {
-                System.out.println(product);
+                System.out.println(arrayList);
+            } else if(arrayList.size() == 0) {
+                System.out.println("Không có sản phẩm");
             }
         }
     }
 
     public void increase() {
         Collections.sort(productList);
-        for (Product product : productList) {
-            System.out.println(product);
-        }
     }
 
     public void decrease() {
         Product newProduct = new Product();
         Collections.sort(productList, newProduct);
-        for(Product product : productList) {
-            System.out.println(product);
-        }
     }
 }
