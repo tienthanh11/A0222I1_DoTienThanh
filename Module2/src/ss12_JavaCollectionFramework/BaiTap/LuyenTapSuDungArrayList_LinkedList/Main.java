@@ -1,5 +1,6 @@
 package ss12_JavaCollectionFramework.BaiTap.LuyenTapSuDungArrayList_LinkedList;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -32,7 +33,9 @@ public class Main {
                     manager.displayProduct();
                     break;
                 case 5:
-                    manager.searchProduct();
+                    System.out.println("Nhập sản phẩm cần tìm :");
+                    String name = scanner.nextLine();
+                    manager.searchProduct(name);
                     break;
                 case 6:
                     manager.increase();
