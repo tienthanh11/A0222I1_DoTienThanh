@@ -6,12 +6,14 @@ public class Product implements Comparable<Product>, Comparator<Product>{
     private int id;
     private String name;
     private float price;
+    static int countId;
 
     public Product() {
     }
 
-    public Product(int id, String name, float price) {
-        this.id = id;
+    public Product(String name, float price) {
+        countId++;
+        this.id = countId;
         this.name = name;
         this.price = price;
     }

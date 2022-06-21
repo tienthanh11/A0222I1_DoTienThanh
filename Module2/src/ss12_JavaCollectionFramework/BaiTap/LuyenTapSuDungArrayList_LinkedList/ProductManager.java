@@ -9,14 +9,12 @@ public class ProductManager {
     Scanner scanner = new Scanner(System.in);
 
     public void addNewProduct() {
-        System.out.println("Nhập id sản phẩm: ");
-        int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập tên sàn phẩm: ");
         String name = scanner.nextLine();
         System.out.println("Nhập giá sản phẩm: ");
         float price = Float.parseFloat(scanner.nextLine());
 
-        Product product = new Product(id, name, price);
+        Product product = new Product(name, price);
         productList.add(product);
     }
 
