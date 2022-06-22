@@ -21,21 +21,29 @@ public class Main {
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
-                    manager.addNewProduct();
+                    System.out.println("Nhập tên sàn phẩm: ");
+                    String name = scanner.nextLine();
+                    System.out.println("Nhập giá sản phẩm: ");
+                    float price = Float.parseFloat(scanner.nextLine());
+                    manager.addNewProduct(name, price);
                     break;
                 case 2:
-                    manager.editProduct();
+                    System.out.println("Nhập vào id muốn sừa: ");
+                    int idEdit = Integer.parseInt(scanner.nextLine());
+                    manager.editProduct(idEdit);
                     break;
                 case 3:
-                    manager.removeProduct();
+                    System.out.println("Nhập id sản phẩm cần xoá: ");
+                    int idRemove = Integer.parseInt(scanner.nextLine());
+                    manager.removeProduct(idRemove);
                     break;
                 case 4:
                     manager.displayProduct();
                     break;
                 case 5:
                     System.out.println("Nhập sản phẩm cần tìm :");
-                    String name = scanner.nextLine();
-                    manager.searchProduct(name);
+                    String nameSp = scanner.nextLine();
+                    manager.searchProduct(nameSp);
                     break;
                 case 6:
                     manager.increase();

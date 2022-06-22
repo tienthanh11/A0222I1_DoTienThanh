@@ -8,19 +8,17 @@ public class ProductManager {
     ArrayList<Product> productList = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
-    public void addNewProduct() {
-        System.out.println("Nhập tên sàn phẩm: ");
-        String name = scanner.nextLine();
-        System.out.println("Nhập giá sản phẩm: ");
-        float price = Float.parseFloat(scanner.nextLine());
-
-        Product product = new Product(name, price);
+    public void addNewProduct(String name, float price) {
+        int lastId = 0;
+        if(productList.size() > 0){
+            lastId = productList.get(productList.size() - 1).getId();
+        }
+        Product product = new Product(lastId + 1, name, price);
         productList.add(product);
+
     }
 
-    public void editProduct() {
-        System.out.println("Nhập vào id muốn sừa: ");
-        int idEdit = Integer.parseInt(scanner.nextLine());
+    public void editProduct(int idEdit) {
         for(int i = 0; i < productList.size(); i++) {
             if(productList.get(i).getId() == idEdit) {
                 System.out.println("Nhập tên muốn sửa: ");
@@ -35,9 +33,7 @@ public class ProductManager {
         }
     }
 
-    public void removeProduct() {
-        System.out.println("Nhập id sản phẩm cần xoá: ");
-        int idRemove = Integer.parseInt(scanner.nextLine());
+    public void removeProduct(int idRemove) {
         for(int i = 0; i < productList.size(); i++) {
             if(productList.get(i).getId() == idRemove) {
                 productList.remove(productList.get(i));
@@ -54,7 +50,7 @@ public class ProductManager {
         }
     }
 
-    public void searchProduct(String name) {
+    public void searchProduct(String nameSP) {
 /*        System.out.println("Nhập sản phẩm cần tìm: ");
         String strProduct = scanner.nextLine();*/
 
@@ -68,7 +64,7 @@ public class ProductManager {
             }
         }*/
         for (Product sp : productList) {
-            if (sp.getName().indexOf(name) >= 0){
+            if (sp.getName().indexOf(nameSP) >= 0){
                 System.out.println(sp);
             }else {
                 System.out.println("không có sản phẩm");
