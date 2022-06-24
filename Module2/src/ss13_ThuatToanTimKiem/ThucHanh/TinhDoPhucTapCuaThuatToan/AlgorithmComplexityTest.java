@@ -1,4 +1,4 @@
-package ss_13_ThuatToanTimKiem.ThucHanh.TinhDoPhucTapCuaThuatToan;
+package ss13_ThuatToanTimKiem.ThucHanh.TinhDoPhucTapCuaThuatToan;
 
 import java.util.Scanner;
 

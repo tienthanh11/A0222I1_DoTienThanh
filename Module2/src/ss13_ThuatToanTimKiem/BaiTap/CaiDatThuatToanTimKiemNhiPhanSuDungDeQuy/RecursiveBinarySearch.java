@@ -1,4 +1,4 @@
-package ss_13_ThuatToanTimKiem.BaiTap.CaiDatThuatToanTimKiemNhiPhanSuDungDeQuy;
+package ss13_ThuatToanTimKiem.BaiTap.CaiDatThuatToanTimKiemNhiPhanSuDungDeQuy;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package ss_13_ThuatToanTimKiem.BaiTap.TimChuoiLienTiepCoDoDaiLonNhat;
+package ss13_ThuatToanTimKiem.BaiTap.TimChuoiLienTiepCoDoDaiLonNhat;
 
 import java.util.LinkedList;
 import java.util.Scanner;
