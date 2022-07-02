@@ -1,0 +1,4 @@
+Long;18;A0222I1;true
+Tu;19;A0222I1;true
+Duyet;21;A0222I2;true
+Thanh;20;A0222I2;false
