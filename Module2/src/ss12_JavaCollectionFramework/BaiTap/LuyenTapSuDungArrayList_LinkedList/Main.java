@@ -1,6 +1,5 @@
 package ss12_JavaCollectionFramework.BaiTap.LuyenTapSuDungArrayList_LinkedList;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
