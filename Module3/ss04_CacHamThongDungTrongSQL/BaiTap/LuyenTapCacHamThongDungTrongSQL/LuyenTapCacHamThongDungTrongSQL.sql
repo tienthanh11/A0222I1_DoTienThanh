@@ -127,12 +127,14 @@ having avg(Mark) >= all (select avg(Mark) from Mark m group by m.StudentID);
 
 -- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
 
+-- Cách 1:
 select *
 from `subject`
 where Credit = (select max(sub.Credit) from `subject` sub);
-
-select SubID, SubName, `Status`, max(Credit)
-from `subject`;
+-- Cách 2:
+select sub.SubID, sub.SubName, max(Credit) as Credit,  sub.`Status`
+from `subject` sub
+where  Credit = (select max(Credit) from `subject`);
 
 -- Hiển thị các thông tin môn học có điểm thi lớn nhất.
 
