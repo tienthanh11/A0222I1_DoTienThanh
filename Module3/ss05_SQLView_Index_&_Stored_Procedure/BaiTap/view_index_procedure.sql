@@ -111,7 +111,7 @@ BEGIN
 	DELETE
     FROM products
     WHERE products.id = pid;
-END //
+END //	
 DELIMITER ;
 
 CALL product_delete_id(6);
