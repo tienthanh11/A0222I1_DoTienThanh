@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .static {
+            position: static;
+            border: solid green;
+            left: 100px;
+            top: 200px;
+        }
+
+        .relative {
+            position: relative;
+            border: solid red;
+            left: 50px;
+            top: 50px;
+        }
+
+        .absolute {
+            position: absolute;
+            border: solid yellow;
+            margin: 0px;
+            left: 0px;
+            top: 0px;
+        }
+
+        .parent {
+            position: relative;
+            border: solid green;
+            left: 500px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<p class="static">static</p>
+<p class="relative">relative</p>
+<div class="parent">
+    <img src="hinh.jpg" height="200" width="400"/>
+    <p class="absolute">absolute</p>
+</div>
+</body>
+</html>

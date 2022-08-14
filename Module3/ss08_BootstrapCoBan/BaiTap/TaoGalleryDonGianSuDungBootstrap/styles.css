@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+div .gallery {
+    border: 1px solid #ccc;
+}
+div .gallery:hover {
+    border: 1px solid #777;
+}
+div .gallery img {
+    width: 100%;
+    height: auto;
+}
+div .desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Với các màn hình nhỏ hơn 700px thì hiển thị 2 ảnh trên cùng một dòng. */
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+/*Với các màn hình nhỏ hơn 500px thì hiển thị 1 ảnh trên một dòng.*/
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}

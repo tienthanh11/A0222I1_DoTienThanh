@@ -1,0 +1,62 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 0.9em;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "header header" "nav nav" "section aside" "article aside" "footer footer";
+}
+
+header {
+    grid-area: header;
+    color: white;
+    background-color: black;
+}
+
+nav {
+    grid-area: nav;
+    color: black;
+    background-color: white;
+    padding: 10px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 5px;
+    padding: 5px;
+}
+
+section {
+    grid-area: section;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+article {
+    grid-area: article;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+aside {
+    grid-area: aside;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    color: white;
+    background-color: black;
+    padding: 10px;
+}
