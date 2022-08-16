@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<%
+    int n1 = Integer.parseInt(request.getParameter("num1"));
+    int n2 = Integer.parseInt(request.getParameter("num2"));
+    int sum = n1 + n2;
+%>
+<h1>result <%=sum%></h1>
 </body>
 </html>
