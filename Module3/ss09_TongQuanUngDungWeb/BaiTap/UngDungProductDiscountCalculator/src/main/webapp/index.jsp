@@ -37,7 +37,6 @@
         #color-input {
             color: blue;
             background-color: yellow;
-            text-align: center;
         }
     </style>
 </head>
