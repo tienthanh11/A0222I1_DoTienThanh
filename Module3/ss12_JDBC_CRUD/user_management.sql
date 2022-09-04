@@ -35,7 +35,14 @@ BEGIN
 END $$
 DELIMITER ;
 
-
+DELIMITER $$
+CREATE PROCEDURE sp_get_all_users(IN user_id INT)
+BEGIN
+	SELECT users.`name`, users.email, users.country
+    FROM users
+    WHERE users.id = user_id;
+END $$
+DELIMITER ;
 
 -- Tạo mới 2 bảng Permission và User_Permission trong MySql
 create table Permision (
