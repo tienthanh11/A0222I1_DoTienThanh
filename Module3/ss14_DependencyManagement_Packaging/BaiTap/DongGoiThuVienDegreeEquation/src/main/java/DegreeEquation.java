@@ -1,10 +1,14 @@
 import java.security.NoSuchAlgorithmException;
 
 public class DegreeEquation {
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-        System.out.println(DegreeEquation.Equation(1, 2, 3));
-        System.out.println(DegreeEquation.Equation(2,-7,3));
-        System.out.println(DegreeEquation.Equation(1,-4,4));
+    public static void main(String[] args) {
+        try {
+            System.out.println(DegreeEquation.Equation(1, 2, 3));
+            System.out.println(DegreeEquation.Equation(2,-7,3));
+            System.out.println(DegreeEquation.Equation(1,-4,4));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
     }
     public static int Equation(float a, float b, float c) throws NoSuchAlgorithmException {
         if(a == 0) {
