@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentRepository implements IStudentRepository {
+public class StudentRepository implements IStudentRepository{
 
     private final String SELECT_ALL = "select * from student;";
     private final String DELETE_BY_ID = " delete from student where id = ?;";

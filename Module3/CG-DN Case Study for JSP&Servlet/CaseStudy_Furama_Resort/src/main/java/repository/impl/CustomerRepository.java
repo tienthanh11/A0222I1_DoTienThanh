@@ -61,7 +61,6 @@ public class CustomerRepository implements ICustomerRepository {
             preparedStatement.setString(7, customer.getCustomer_email());
             preparedStatement.setString(8, customer.getCustomer_address());
             preparedStatement.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

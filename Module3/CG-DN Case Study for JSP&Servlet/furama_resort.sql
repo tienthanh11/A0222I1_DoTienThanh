@@ -119,8 +119,8 @@ INSERT INTO bo_phan (ten_bo_phan)
 VALUES ('Sale - Marketing'), ('Hành chính'), ('Phục vụ'), ('Quản lý');
 SELECT * FROM bo_phan;
 
-INSERT INTO nhan_vien (ho_ten , ngay_sinh, so_cmnd, luong, so_dien_thoai, 
-					   email, dia_chi, ma_vi_tri, ma_trinh_do, ma_bo_phan)
+INSERT INTO nhan_vien (ho_ten , ngay_sinh, so_cmnd, luong, so_dien_thoai, email, dia_chi, ma_vi_tri, 
+						ma_trinh_do, ma_bo_phan)
 VALUES ('Nguyễn Văn An', '1970-11-07',	'456231786', 10000000, '0901234121', 'annguyen@gmail.com', '295 Nguyễn Tất Thành, Đà Nẵng',	1, 3, 1),
        ('Lê Văn Bình', '1997-04-09', '654231234', 7000000, '0934212314', 'binhlv@gmail.com', '22 Yên Bái, Đà Nẵng', 1, 2, 2),
        ('Hồ Thị Yến', '1995-12-12', '999231723', 14000000, '0412352315', 'thiyen@gmail.com', 'K234/11 Điện Biên Phủ, Gia Lai', 1, 3, 2),
@@ -137,7 +137,7 @@ INSERT INTO loai_khach (ten_loai_khach)
 VALUES ('Diamond'), ('Platinium'), ('Gold'), ('Silver'), ('Member');
 SELECT * FROM loai_khach;	
 
-INSERT INTO khach_hang (ma_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, so_dien_thoai, email, dia_chi)
+INSERT INTO khach_hang (ma_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, so_dien_thoai, email, dia_chi)	
 VALUES (5, 'Nguyễn Thị Hào', '1970-11-07', 0, '643431213', '0945423362', 'thihao07@gmail.com', '23 Nguyễn Hoàng, Đà Nẵng'),
 	   (3, 'Phạm Xuân Diệu', '1992-08-08', 1, '865342123', '0954333333', 'xuandieu92@gmail.com', 'K77/22 Thái Phiên, Quảng Trị'),
        (1, 'Trương Đình Nghệ', '1990-02-27', 1, '488645199', '0373213122', 'nghenhan2702@gmail.com', 'K323/12 Ông Ích Khiêm, Vinh'),
@@ -196,3 +196,7 @@ SELECT * FROM hop_dong;
 INSERT INTO hop_dong_chi_tiet (ma_hop_dong, ma_dich_vu_di_kem, so_luong)
 VALUES (2, 4, 5), (2, 5, 8), (2, 6, 15), (3, 1, 1), (3, 2, 11), (1, 3, 1), (1, 2, 2), (12, 2, 2);
 SELECT * FROM hop_dong_chi_tiet;
+
+select ma_dich_vu,ten_dich_vu,dien_tich,chi_phi_thue,so_nguoi_toi_da,ma_kieu_thue, 
+		tieu_chuan_phong,mo_ta_tien_nghi_khac,so_tang
+from dich_vu;

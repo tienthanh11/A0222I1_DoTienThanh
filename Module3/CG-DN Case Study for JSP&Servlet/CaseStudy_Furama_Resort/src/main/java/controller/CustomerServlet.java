@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CustomerServlet", value = "/CustomerServlet")
+@WebServlet(name = "CustomerServlet", urlPatterns = {"/index_customer"})
 public class CustomerServlet extends HttpServlet {
     private ICustomerService customerService = new CustomerService();
 
